@@ -1,0 +1,21 @@
+.experience {
+    
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+    }
+
+    &__item {
+        padding: 68px 25px;
+        background: var(--color-dark-light);
+        border-bottom: 6px solid var(--color-accent);
+        max-width: 360px;
+
+        @include mobile {
+            padding: 34px 20px;
+        }
+    }
+    
+}

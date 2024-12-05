@@ -1,0 +1,14 @@
+.grid {
+    --gridColumn: 1;
+    display: grid;
+    grid-template-columns: repeat(var(--gridColumn), 1fr);
+    gap: 20px;
+
+    &--2 {
+        --gridColumn: 2;
+
+        @include desktop {
+            --gridColumn: 1;
+        }
+    }
+}

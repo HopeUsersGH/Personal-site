@@ -1,0 +1,27 @@
+.burger-button {
+    @include reset-button;
+    @include square (var(--button-height));
+
+    position: relative;
+    cursor: pointer;
+
+    @include hover {
+        &::after {
+            --colorBurgerLines: var(--color-accent);
+        }
+    }
+
+    &::after {
+        --colorBurgerLines: var(--color-light);
+
+        @include abs-center;
+
+        content: '';
+        width: 80%;
+        height: 2px;
+        background-color: var(--colorBurgerLines);
+        border-radius: 1px;
+        box-shadow: 0 -10px var(--colorBurgerLines), 0 10px var(--colorBurgerLines);
+        transition-duration: var(--transition-duration);
+    }
+}

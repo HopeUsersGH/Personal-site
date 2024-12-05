@@ -1,0 +1,46 @@
+.hero {
+    display: flex;
+    flex-direction: column;
+    row-gap: 58px;
+
+    &__body {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__greetings {
+        font-size: 38px;
+        font-weight: 700;
+        line-height: 68px;
+        color: var(--color-accent);
+    }
+
+    &__title {
+        &:not(:last-child) {
+            margin-bottom: 38px;
+        }
+    }
+    
+    &__description {
+        max-width: 550px;
+        line-height: 28px;
+    }
+
+    &__actions {
+        display: flex;
+        align-items: center;
+        column-gap: 38px;
+    }
+
+    &__download {
+        @include flex-center;
+        column-gap: 10px;
+        font-size: 18px;
+        font-weight: 700;
+
+        @include hover {
+            color: var(--color-light);
+        }
+    }
+
+}

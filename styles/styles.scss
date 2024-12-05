@@ -1,0 +1,26 @@
+@import 
+    'mixin',
+    'media',
+    'utils',
+    'fonts',
+    'variables',
+    'globals',
+    'normalize';
+
+@import
+    'blocks/buttons/button',
+    'blocks/buttons/burger-button',
+    'blocks/buttons/cross-button',
+    'blocks/dialog/mobile-overlay',
+    'blocks/header/header',
+    'blocks/sections/swiper',
+    'blocks/sections/grid',
+    'blocks/sections/section',
+    'blocks/sections/hero',
+    'blocks/sections/subtitle',
+    'blocks/sections/experience',
+    'blocks/sections/experience-card',
+    'blocks/sections/project-card',
+    'blocks/sections/clients',
+    'blocks/sections/contact',
+    'blocks/footer/footer';

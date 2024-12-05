@@ -1,0 +1,19 @@
+.experience-card {
+
+    &__body {
+        display: flex;
+        flex-direction: column;
+        row-gap: 46px;
+    
+        @include mobile {
+            row-gap: 30px;
+        }
+    }
+
+    &__main {
+        display: flex;
+        flex-direction: column;
+        row-gap: 18px;
+        line-height: 19px;
+    }
+}
