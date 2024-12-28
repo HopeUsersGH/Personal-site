@@ -1,14 +1,24 @@
 .footer {
     padding: 48px 123px 26px;
     background: var(--color-dark-deep);
-
+    
     &__body {
         display: flex;
         justify-content: space-between;
 
+        @include mobile {
+            flex-direction: column;
+            align-items: center;
+            row-gap: 68px;
+        }
+
         &-inner {
             display: flex;
             column-gap: 114px;
+
+            @include tablet {
+                column-gap: 57px;
+            }
         }
     }
 
@@ -34,10 +44,23 @@
     &__item:not(:last-child) {
         margin-bottom: 20px;
     }
+
+    & a { 
+        @include hover {
+            color: var(--color-light);
+        }
+    }
 }
 
 .socials {
     &__item:not(:last-child) {
         margin-bottom: 20px;
     }
+
+    & a { 
+        @include hover {
+            color: var(--color-light);
+        }
+    }
 }
+

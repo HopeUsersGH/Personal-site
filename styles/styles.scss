@@ -7,12 +7,15 @@
     'globals',
     'normalize';
 
-@import
+    @import
+    'blocks/buttons/logo',
     'blocks/buttons/button',
     'blocks/buttons/burger-button',
     'blocks/buttons/cross-button',
-    'blocks/dialog/mobile-overlay',
+    'blocks/forms/field',
+    'blocks/forms/send-email-form',
     'blocks/header/header',
+    'blocks/header/progress-bar',
     'blocks/sections/swiper',
     'blocks/sections/grid',
     'blocks/sections/section',

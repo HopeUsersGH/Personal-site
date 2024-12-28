@@ -1,0 +1,8 @@
+.progress-bar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 4px; // Высота линии, можно менять/подбирать
+    width: 0%;
+    background: var(--color-accent); // Цвет линии, можете заменить на HEX.
+}

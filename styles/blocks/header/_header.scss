@@ -1,22 +1,12 @@
 .header {
+    position: sticky;
+    top: 0;
+    z-index: 999;
     padding: 18px 0 var(--section-padding-y);
-    
+
+    background: linear-gradient(var(--color-dark), transparent);
     color: var(--color-light);
     font-weight: 700;
-
-    &__logo {
-        font-size: 28px;
-        
-        @include hover {
-            color: var(--color-accent);
-        }
-
-        &-link {
-            span {
-                color: var(--color-accent);
-            }
-        }
-    }
 
     &__inner {
         display: flex;

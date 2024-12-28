@@ -1,0 +1,32 @@
+.field {    
+    &__label {
+        @include fluid-text(16, 14);
+    }
+
+    &__input {
+        width: 100%;
+        padding: 10px 15px;
+        border: var(--border);
+        background-color: var(--color-dark-light);
+        color: var(--color-light);
+        
+        @include hover {
+            background-color: var(--color-accent);
+        }
+
+        &:focus {
+            border-color: var(--color-accent);
+            outline: none;
+        }
+
+        &::placeholder {
+            color: var(--color-light);
+        }
+
+    }
+
+    &__inner {
+        display: flex;
+        column-gap: 1px;
+    }
+}
