@@ -8,12 +8,14 @@
     'normalize';
 
     @import
-    'blocks/buttons/logo',
-    'blocks/buttons/button',
-    'blocks/buttons/burger-button',
-    'blocks/buttons/cross-button',
-    'blocks/forms/field',
-    'blocks/forms/send-email-form',
+    'buttons/logo',
+    'buttons/button',
+    'buttons/burger-button',
+    'buttons/cross-button',
+    'forms/field',
+    'forms/send-email-form',
+    'forms/contact-form',
+    'tooltip/tooltip',
     'blocks/header/header',
     'blocks/header/progress-bar',
     'blocks/sections/swiper',

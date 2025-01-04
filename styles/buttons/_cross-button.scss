@@ -33,3 +33,11 @@
         rotate: 45deg;
     }
 }
+
+.send-email-overlay,
+.contact-overlay {
+    &__close-button-wrapper {
+        display: flex;
+        justify-content: end;
+    }
+}

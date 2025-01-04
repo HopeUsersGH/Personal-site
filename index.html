@@ -69,7 +69,7 @@
                     </div>
                     <div class="hero__actions">
                         <button class="hero__button button" onclick="sendEmailOverlay.showModal()">Мой Email</button>
-                        <a href="/" class="hero__download">
+                        <a href="/src/test.txt" class="hero__download" download>
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                 <defs>
                                     <clipPath id="clip1_214">
@@ -134,7 +134,7 @@
                                     <div class="experience-card__main">
                                         <h3 class="experience-card__title">SEO оптимизация</h3>
                                         <div class="experience-card__description">
-                                            <p>Работаю с рядом процедур, которые нужно провести на сайте для его успешного продвижения в поисковых систем</p>
+                                            <p>Работаю с рядом процедур, которые нужно провести на сайте для его успешного продвижения в поисковых систем.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -299,7 +299,7 @@
                         </div>
                     </div>
                     <div class="contact__button wow animate__animated animate__fadeInRight">
-                        <button class="contact__button button">Свяжись со мной</button>
+                        <button class="contact__button button" onclick="contactOverlay.showModal()">Свяжись со мной</button>
                     </div>
                 </div>
             </div>
@@ -331,7 +331,10 @@
                 <div class="footer__socials socials">
                     <h4 class="socials__title">Мои аккаунты</h4>
                     <ul class="socials__list">
-                         <li class="socials__item">
+                        <li class="socials__item">
+                            <p><a href="https://t.me/wwhopelessww" rel="nofollow" target="_blank">Telegram</a></p>
+                        </li>
+                        <li class="socials__item">
                             <p><a href="https://vk.com/matsnevl" rel="nofollow" target="_blank">VK</a></p>
                         </li>
                         <li class="socials__item">
@@ -371,10 +374,36 @@
                     type="email"
                     disabled
                 />
-                <button class="button" type="button" id="btnCopyEmail">
-                    copy
-                </button>
+                <div class="field__btn-inner">
+                    <button class="button button--transparent" type="button" id="btnCopyEmail">
+                        Скопировать
+                    </button>
+                    <div id="copyTooltip" class="tooltip">Скопировано</div>
+                </div>
             </div>
+        </form>
+    </dialog>
+
+    <dialog class="contact-overlay" id="contactOverlay">
+        <form method="dialog" class="contact-overlay__close-button-wrapper">
+            <button class="contact-overlay__close-button cross-button" type="submit">
+                <span class="visually-hidden">Закрыть окно с контактом</span>
+            </button>
+        </form>
+        <form class="contact-overlay__form contact-form">
+            <div class="contact-form__socials socials">
+                <ul class="socials__list">
+                    <li class="socials__item">
+                        <p><a href="https://t.me/wwhopelessww" rel="nofollow" target="_blank">Telegram</a></p>
+                    </li>
+                    <li class="socials__item">
+                        <p><a href="https://vk.com/matsnevl" rel="nofollow" target="_blank">VK</a></p>
+                    </li>
+                    <li class="socials__item">
+                        <p><a href="https://discordapp.com/users/379675361665089536/" rel="nofollow" target="_blank">Discord</a></p>
+                    </li>
+                </ul>
+            </div> 
         </form>
     </dialog>
 
