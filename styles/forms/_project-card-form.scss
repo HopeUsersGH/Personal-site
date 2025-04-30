@@ -1,0 +1,33 @@
+@use '../helpers' as *;
+
+.project-card-form {
+
+    &__description {
+        text-align: justify;
+    }
+
+    span {
+        color: var(--color-accent);
+    }
+
+    &__stack-date {
+        margin-top:20px;
+        display: flex;
+        flex-direction: column;
+        row-gap: 10px;
+    }
+
+    &__video {
+        margin: 25px 0;
+    }
+
+    &__link {
+        display: flex;
+        justify-content: space-between;
+        column-gap: 20px;
+
+        @include petty-mobile {
+            flex-direction: column;
+        }
+    }
+}

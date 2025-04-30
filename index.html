@@ -2,379 +2,539 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Персональный сайт</title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicons/favicon-16x16.png">
+    <link rel="manifest" href="images/favicons/site.webmanifest">
 
     <link rel="stylesheet" href="./styles/styles.css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 
+    <script src="./js/main.js" type="module"></script>
 </head>
 <body>
-    
-    <header class="header">
-        <div class="header__inner container">
-            <div class="header__logo logo">
-                <a href="/" class="header__logo-link">
-                    Alifreza<span>.</span>
-                </a>
+
+<header class="header" data-js-header>
+    <div class="progress-bar" id="progressBar"></div>
+    <div class="header__inner container">
+        <div class="header__logo logo">
+            <a href="/" class="logo-link">
+                DEV<span>.</span>
+            </a>
+        </div>
+        <nav class="header__menu hidden-mobile">
+            <ul class="header__menu-list">
+                <li class="header__menu-item">
+                    <a href="#home" class="header__menu-link">Главная</a>
+                </li>
+                <li class="header__menu-item">
+                    <a href="#services" class="header__menu-link">Опыт</a>
+                </li>
+                <li class="header__menu-item">
+                    <a href="#projects" class="header__menu-link">Проекты</a>
+                </li>
+                <li class="header__menu-item">
+                    <a href="#clients" class="header__menu-link">Клиенты</a>
+                </li>
+                <li class="header__menu-item">
+                    <a href="#about-me" class="header__menu-link">Обо мне</a>
+                </li>
+            </ul>
+        </nav>
+        <button class="header__button button button--transparent" type="button" data-js-telegram-button>Телеграмм</button>
+        <nav class="header__vertical-menu visible-mobile">
+            <ul class="header__vertical-menu-list">
+                <li class="header__vertical-menu-item">
+                    <a href="#home" class="header__vertical-menu-link"></a>
+                </li>
+                <li class="header__vertical-menu-item">
+                    <a href="#services" class="header__vertical-menu-link"></a>
+                </li>
+                <li class="header__vertical-menu-item">
+                    <a href="#projects" class="header__vertical-menu-link"></a>
+                </li>
+                <li class="header__vertical-menu-item">
+                    <a href="#clients" class="header__vertical-menu-link"></a>
+                </li>
+                <li class="header__vertical-menu-item">
+                    <a href="#about-me" class="header__vertical-menu-link"></a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main class="content">
+    <section class="section" aria-labelledby="hero-title" id="home" >
+        <div class="section__body">
+            <div class="hero container">
+                <div class="hero__body">
+                    <div class="hero__greetings">
+                        <p>Привет, с тобой Мацнев Илья</p>
+                    </div>
+                    <h1 class="hero__title" id="hero-title">Frontend разработка</h1>
+                    <div class="hero__description">
+                        <p>Стремлюсь стать отличным специалистом в области frontend разработки. Занимаюсь сайтами с 2021 года и не собираюсь останавливаться!</p>
+                    </div>
+                </div>
+                <div class="hero__actions">
+                    <button class="hero__button button" onclick="sendEmailOverlay.showModal()">Email</button>
+                    <a class="hero__download hidden-mobile" onclick="resumeOverlay.showModal()">
+                        <svg width="24px" height="24px" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path clip-rule="evenodd" d="M17.7469 15.4149C17.9855 14.8742 18.1188 14.2724 18.1188 14.0016C18.1188 11.6544 16.2952 9.7513 14.046 9.7513C11.7969 9.7513 9.97332 11.6544 9.97332 14.0016C9.97332 16.3487 12.0097 17.8886 14.046 17.8886C15.3486 17.8886 16.508 17.2515 17.2517 16.2595C17.4466 16.0001 17.6137 15.7168 17.7469 15.4149ZM14.046 15.7635C14.5551 15.7635 15.0205 15.5684 15.3784 15.2457C15.81 14.8566 16 14.2807 16 14.0016C16 12.828 15.1716 11.8764 14.046 11.8764C12.9205 11.8764 12 12.8264 12 14C12 14.8104 12.9205 15.7635 14.046 15.7635Z" fill="#000000" fill-rule="evenodd"/>
+                            <path clip-rule="evenodd" d="M1.09212 14.2724C1.07621 14.2527 1.10803 14.2931 1.09212 14.2724C0.96764 14.1021 0.970773 13.8996 1.09268 13.7273C1.10161 13.7147 1.11071 13.7016 1.11993 13.6882C4.781 8.34319 9.32105 5.5 14.0142 5.5C18.7025 5.5 23.2385 8.33554 26.8956 13.6698C26.965 13.771 27 13.875 27 13.9995C27 14.1301 26.9593 14.2399 26.8863 14.3461C23.2302 19.6702 18.6982 22.5 14.0142 22.5C9.30912 22.5 4.75717 19.6433 1.09212 14.2724ZM3.93909 13.3525C3.6381 13.7267 3.6381 14.2722 3.93908 14.6465C7.07417 18.5443 10.6042 20.3749 14.0142 20.3749C17.4243 20.3749 20.9543 18.5443 24.0894 14.6465C24.3904 14.2722 24.3904 13.7267 24.0894 13.3525C20.9543 9.45475 17.4243 7.62513 14.0142 7.62513C10.6042 7.62513 7.07417 9.45475 3.93909 13.3525Z" fill="#000000" fill-rule="evenodd"/>
+                        </svg>
+                        Резюме
+                    </a>
+                    <a class="hero__download visible-mobile" href="/src/resume.pdf" download>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <defs>
+                                <clipPath id="clip1_214">
+                                    <rect id="Frame" rx="-0.500000" width="23.000000" height="23.000000" transform="translate(0.500000 0.500000)" fill="white" fill-opacity="0"/>
+                                </clipPath>
+                            </defs>
+                            <rect id="Frame" rx="-0.500000" width="23.000000" height="23.000000" transform="translate(0.500000 0.500000)" fill="#FFFFFF" fill-opacity="0"/>
+                            <g clip-path="url(#clip1_214)">
+                                <path id="Vector" d="M12 2.25C12.19 2.25 12.38 2.32 12.53 2.46C12.67 2.61 12.75 2.8 12.75 3L12.75 14.68L15.97 11.47C16.03 11.39 16.12 11.33 16.21 11.29C16.3 11.25 16.4 11.23 16.5 11.23C16.6 11.22 16.7 11.24 16.79 11.28C16.89 11.32 16.97 11.37 17.04 11.45C17.12 11.52 17.17 11.6 17.21 11.7C17.25 11.79 17.27 11.89 17.26 11.99C17.26 12.09 17.24 12.19 17.2 12.28C17.16 12.37 17.1 12.46 17.03 12.53L12.53 17.03C12.38 17.17 12.19 17.24 12 17.24C11.8 17.24 11.61 17.17 11.47 17.03L6.97 12.53C6.89 12.46 6.83 12.37 6.79 12.28C6.75 12.19 6.73 12.09 6.73 11.99C6.72 11.89 6.74 11.79 6.78 11.7C6.82 11.6 6.87 11.52 6.95 11.45C7.02 11.37 7.1 11.32 7.2 11.28C7.29 11.24 7.39 11.22 7.49 11.23C7.59 11.23 7.69 11.25 7.78 11.29C7.87 11.33 7.96 11.39 8.03 11.47L11.25 14.68L11.25 3C11.25 2.8 11.32 2.61 11.46 2.46C11.61 2.32 11.8 2.25 12 2.25ZM3 15.75C3.19 15.75 3.38 15.82 3.53 15.96C3.67 16.11 3.75 16.3 3.75 16.5L3.75 18.75C3.75 19.14 3.9 19.52 4.18 19.81C4.47 20.09 4.85 20.25 5.25 20.25L18.75 20.25C19.14 20.25 19.52 20.09 19.81 19.81C20.09 19.52 20.25 19.14 20.25 18.75L20.25 16.5C20.25 16.3 20.32 16.11 20.46 15.96C20.61 15.82 20.8 15.75 21 15.75C21.19 15.75 21.38 15.82 21.53 15.96C21.67 16.11 21.75 16.3 21.75 16.5L21.75 18.75C21.75 19.54 21.43 20.3 20.87 20.87C20.3 21.43 19.54 21.75 18.75 21.75L5.25 21.75C4.45 21.75 3.69 21.43 3.12 20.87C2.56 20.3 2.25 19.54 2.25 18.75L2.25 16.5C2.25 16.3 2.32 16.11 2.46 15.96C2.61 15.82 2.8 15.75 3 15.75Z" fill="#808080" fill-opacity="1.000000" fill-rule="evenodd"/>
+                            </g>
+                        </svg>
+                        Резюме в .pdf
+                    </a>
+                </div>
             </div>
-            <nav class="header__menu hidden-mobile">
-                <ul class="header__menu-list">
-                    <li class="header__menu-item">
-                        <a href="/" class="header__menu-link">Home</a>
+        </div>
+    </section>
+
+    <section class="section" aria-labelledby="experience-title" id="services">
+        <header class="section__header container">
+            <h2 class="section__title" id="experience-title">Изучаю и практикую</h2>
+            <div class="section__description">
+                <h3 class="section__subtitle subtitle h4">Опыт</h3>
+                <div class="subtitle__description">
+                    <p>Узнайте с чем я могу Вам помочь, чтобы обеспечить успех проекту.</p>
+                </div>
+            </div>
+        </header>
+        <div class="section__body">
+            <div class="experience container">
+                <ul class="experience__list">
+                    <li class="experience__item">
+                        <article class="experience-card">
+                            <div class="experience-card__body">
+                                <img src="/images/icons/experience/design.svg" alt="design" width="50" height="47" loading="lazy">
+                                <div class="experience-card__main">
+                                    <h3 class="experience-card__title">Product дизайн</h3>
+                                    <div class="experience-card__description">
+                                        <p>Стараюсь придумывать инновационные и привлекательные идеи, руководствоясь UX/UI-дизайном.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
                     </li>
-                    <li class="header__menu-item">
-                        <a href="/" class="header__menu-link">Services</a>
+                    <li class="experience__item">
+                        <article class="experience-card">
+                            <div class="experience-card__body">
+                                <img src="/images/icons/experience/develop.svg" alt="develop" width="50" height="47" loading="lazy">
+                                <div class="experience-card__main">
+                                    <h3 class="experience-card__title">Frontend разработка</h3>
+                                    <div class="experience-card__description">
+                                        <p>Специализируюсь на адаптивной и интерактивной разработке frontend с таким web-технологиями, как: HTML, CSS и JS.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
                     </li>
-                    <li class="header__menu-item">
-                        <a href="/" class="header__menu-link">Work</a>
-                    </li>
-                    <li class="header__menu-item">
-                        <a href="/" class="header__menu-link">About me</a>
-                    </li>
-                    <li class="header__menu-item">
-                        <a href="/" class="header__menu-link">Blog</a>
+                    <li class="experience__item">
+                        <article class="experience-card">
+                            <div class="experience-card__body">
+                                <img src="/images/icons/experience/strategy.svg" alt="strategy" width="50" height="47" loading="lazy">
+                                <div class="experience-card__main">
+                                    <h3 class="experience-card__title">SEO оптимизация</h3>
+                                    <div class="experience-card__description">
+                                        <p>Работаю с рядом процедур, которые нужно провести на сайте для его успешного продвижения в поисковых системах.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
                     </li>
                 </ul>
-            </nav>
-            <button class="header__button button button--transparent hidden-mobile" type="button">Contact</button>
-            <button
-                class="header__burger-button burger-button visible-mobile"
-                type="button"
-                onclick="mobileOverlay.showModal()">
-                <span class="visually-hidden">Open navigation menu</span>
-            </button>
+            </div>
         </div>
-    </header>
+    </section>
 
-    <main class="content">
-        <section class="section container">
-            <div class="section__body">
-                <div class="hero">
-                    <div class="hero__body">
-                        <div class="hero__greetings">
-                            <p>Hello, I’m Alif Reza</p>
+    <section class="section section--gray" aria-labelledby="projects-title" id="projects">
+        <header class="section__header container">
+            <div class="section__header-inner">
+                <h3 class="section__subtitle subtitle h4">Последние работы</h3>
+                <h2 class="section__title" id="projects-title">Некоторые из моих проектов</h2>
+            </div>
+        </header>
+        <div class="section__body">
+            <div class="projects container">
+                <ul class="projects__list grid grid--2">
+                    <li class="projects__item">
+                        <article class="project-card">
+                            <a class="project-card__inner" onclick="projectCardOverlay_0.showModal();">
+                                <div class="project-card__img">
+                                    <img src="/images/posters/MaintMend.jpg" alt="MaintMend" width="654" height="368" loading="lazy">
+                                </div>
+                                <div class="project-card__body">
+                                    <h3 class="project-card__title">MaintMend - Приложение для заявок</h3>
+                                </div>
+                            </a>
+                        </article>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" aria-labelledby="clients-title" id="clients">
+        <header class="section__header section__header--center container">
+            <div class="section__header-inner section__header-inner--center">
+                <h3 class="section__subtitle subtitle h4">Отзывы</h3>
+                <h2 class="section__title" id="clients-title">Мои клиенты</h2>
+            </div>
+        </header>
+        <div class="section__body">
+            <div class="clients container">
+                <div class="clients__slider swiper">
+                    <ul class="clients__slider-list swiper-wrapper">
+                        <li class="clients__slider-item swiper-slide">
+                            <div class="clients__slider-opinion">
+                                <p>Нужно было сверстать адаптивный сайт для моего лабораторного проекта. С работой справился на отлично. Преподаватель тоже хорошо оценил сайт.</p>
+                            </div>
+                            <div class="clients__slider-info">
+                                <svg width="50px" height="50px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                                    <g color="#fff" font-weight="400" font-family="Ubuntu" letter-spacing="0" word-spacing="0" white-space="normal" fill="gray">
+                                        <path d="M8 2a2.84 2.84 0 0 0-1.12.221c-.345.141-.651.348-.906.615v.003l-.001.002c-.248.269-.44.592-.574.96-.137.367-.203.769-.203 1.2 0 .435.065.841.203 1.209.135.361.327.68.574.95l.001.002c.254.267.558.477.901.624v.003c.346.141.723.21 1.12.21.395 0 .77-.069 1.117-.21v-.002c.343-.147.644-.357.892-.625.255-.268.45-.59.586-.952.138-.368.204-.774.204-1.21h.01c0-.43-.065-.831-.203-1.198a2.771 2.771 0 0 0-.585-.963 2.5 2.5 0 0 0-.897-.618A2.835 2.835 0 0 0 7.999 2zM8.024 10.002c-2.317 0-3.561.213-4.486.91-.462.35-.767.825-.939 1.378-.172.553-.226.975-.228 1.71L8 14.002h5.629c-.001-.736-.052-1.159-.225-1.712-.172-.553-.477-1.027-.94-1.376-.923-.697-2.124-.912-4.44-.912z" style="line-height:125%;-inkscape-font-specification:'Ubuntu, Normal';font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-feature-settings:normal;text-indent:0;text-align:start;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;text-transform:none;text-orientation:mixed;shape-padding:0;isolation:auto;mix-blend-mode:normal" overflow="visible"/>
+                                    </g>
+                                </svg>
+                                <div class="clients__slider-about">
+                                    <h4 class="clients__slider-name">Александр Пепелица</h4>
+                                    <p class="clients__slider-post">Студент, Политех</p>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="clients__slider-item swiper-slide">
+                            <div class="clients__slider-opinion">
+                                <p>Нужно было сверстать адаптивный сайт для моего лабораторного проекта. С работой справился на отлично. Преподаватель тоже хорошо оценил сайт.</p>
+                            </div>
+                            <div class="clients__slider-info">
+                                <svg width="50px" height="50px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                                    <g color="#fff" font-weight="400" font-family="Ubuntu" letter-spacing="0" word-spacing="0" white-space="normal" fill="gray">
+                                        <path d="M8 2a2.84 2.84 0 0 0-1.12.221c-.345.141-.651.348-.906.615v.003l-.001.002c-.248.269-.44.592-.574.96-.137.367-.203.769-.203 1.2 0 .435.065.841.203 1.209.135.361.327.68.574.95l.001.002c.254.267.558.477.901.624v.003c.346.141.723.21 1.12.21.395 0 .77-.069 1.117-.21v-.002c.343-.147.644-.357.892-.625.255-.268.45-.59.586-.952.138-.368.204-.774.204-1.21h.01c0-.43-.065-.831-.203-1.198a2.771 2.771 0 0 0-.585-.963 2.5 2.5 0 0 0-.897-.618A2.835 2.835 0 0 0 7.999 2zM8.024 10.002c-2.317 0-3.561.213-4.486.91-.462.35-.767.825-.939 1.378-.172.553-.226.975-.228 1.71L8 14.002h5.629c-.001-.736-.052-1.159-.225-1.712-.172-.553-.477-1.027-.94-1.376-.923-.697-2.124-.912-4.44-.912z" style="line-height:125%;-inkscape-font-specification:'Ubuntu, Normal';font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-feature-settings:normal;text-indent:0;text-align:start;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;text-transform:none;text-orientation:mixed;shape-padding:0;isolation:auto;mix-blend-mode:normal" overflow="visible"/>
+                                    </g>
+                                </svg>
+                                <div class="clients__slider-about">
+                                    <h4 class="clients__slider-name">Александр Пепелица</h4>
+                                    <p class="clients__slider-post">Студент, Политех</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <div class="swiper-pagination"></div>
+
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section--contact" aria-labelledby="contact-title" >
+        <div class="section__body">
+            <div class="contact container">
+                <div class="contact__info">
+                    <h2 class="contact__title" id="contact-title">Есть идея для нового проекта?</h2>
+                    <div class="contact__description">
+                        <p>Не стесняйся обращаться ко мне и будь дружелюбен!</p>
+                    </div>
+                </div>
+                <div class="contact__button">
+                    <button class="contact__button button" onclick="contactOverlay.showModal()">Свяжись со мной</button>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="footer" id="about-me">
+    <div class="footer__body container">
+        <div class="footer__logo logo">
+            <a href="/" class="logo-link">
+                DEV<span>.</span>
+            </a>
+        </div>
+        <div class="footer__body-inner">
+            <address class="footer__info info">
+                <h4 class="info__title">Информация</h4>
+                <ul class="info__list">
+                    <li class="info__item">
+                        <p><a href="tel:+79293497238">(929) 349-72-38</a></p>
+                    </li>
+                    <li class="info__item">
+                        <p><a href="mailto:flash.matsnev132@gmail.com">flash.matsnev132@gmail.com</a></p>
+                    </li>
+                    <li class="info__item">
+                        <p>Россия, Барнаул</p>
+                    </li>
+                </ul>
+            </address>
+            <div class="footer__socials socials">
+                <h4 class="socials__title">Мои аккаунты</h4>
+                <ul class="socials__list">
+                    <li class="socials__item">
+                        <p><a href="https://t.me/wwhopelessww" rel="nofollow" target="_blank">Telegram</a></p>
+                    </li>
+                    <li class="socials__item">
+                        <p><a href="https://vk.com/matsnevl" rel="nofollow" target="_blank">VK</a></p>
+                    </li>
+                    <li class="socials__item">
+                        <p><a href="https://github.com/HopeUsersGH" rel="nofollow" target="_blank">GitHub</a></p>
+                    </li>
+                    <li class="socials__item">
+                        <p><a href="https://discordapp.com/users/379675361665089536/" rel="nofollow" target="_blank">Discord</a></p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer__extra container">
+        <div class="footer__author">
+            <p>Мацнев <span>Илья</span></p>
+        </div>
+        <div class="footer__copyright">
+            <p><time datetime="2025">2025</time></p>
+        </div>
+    </div>
+</footer>
+
+<dialog class="project-card-overlay" id="projectCardOverlay_0">
+    <form method="dialog" class="project-card-overlay__close-button-wrapper visible-mobile">
+        <button class="project-card-overlay__close-button cross-button" type="submit">
+            <span class="visually-hidden">Закрыть проект</span>
+        </button>
+    </form>
+    <div class="project-card-overlay__form project-card-form">
+        <header class="project-card-form__header">
+            <h3 class="project-card-form__title">MaintMend - Приложение для обработки заявок<span>.</span> </h3>
+            <div class="project-card-form__description">
+                <p>Дипломный проект в колледже. Приложение рассчитано на сотрудников компании по менеджменту систем ОПС. В приложении можно управлять заявками, оставленные клиентами. У пользователей доступно разное управление на основе ролей.</p>
+            </div>
+            <div class="project-card-form__stack-date">
+                <div class="project-card-form__stack">
+                    <h4 class="project-card-form__subtitle subtitle">Stack</h4>
+                    <p class="subtitle__description">HTML, CSS, React, FireBase</p>
+                </div>
+                <div class="project-card-form__date">
+                    <h4 class="project-card-form__subtitle subtitle">Дата</h4>
+                    <p class="subtitle__description">Апрель, 2024</p>
+                </div>
+            </div>
+        </header>
+        <div class="project-card-form__body">
+            <div class="project-card-form__video">
+                <video
+                  muted
+                  autoplay
+                  controls
+                  controlslist="nodownload"
+                  disablepictureinpicture
+                  poster="/images/posters/MaintMend.jpg"
+                  src="/src/videos/MaintMend.mp4"
+                  width="100%"
+                ></video>
+            </div>
+            <div class="project-card-form__link">
+                <a class="project-card-form__button button" href="https://techapp-7023d.web.app/" target="_blank" >Посетить</a>
+                <form method="dialog" class="project-card-overlay__close-button-wrapper hidden-mobile">
+                    <button class="project-card-overlay__close-button button" type="submit">Закрыть</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</dialog>
+
+<dialog class="resume-overlay" id="resumeOverlay">
+    <form method="dialog" class="resume-overlay__close-button-wrapper">
+        <button class="resume-overlay__close-button cross-button" type="submit">
+            <span class="visually-hidden">Закрыть резюме</span>
+        </button>
+    </form>
+    <div class="resume-overlay__form resume-form">
+        <header class="resume-form__header grid grid--3">
+            <h3 class="resume-form__name">Мацнев Илья</h3>
+            <h4 class="resume-form__spot">Frontend-разработчик</h4>
+            <address class="resume-form__info info">
+                <ul class="info__list">
+                    <li class="info__item">
+                        <p><a href="tel:+79293497238">(929) 349-72-38</a></p>
+                    </li>
+                    <li class="info__item">
+                        <p><a href="mailto:flash.matsnev132@gmail.com">flash.matsnev132@gmail.com</a></p>
+                    </li>
+                    <li class="info__item">
+                        <p>Россия, Барнаул</p>
+                    </li>
+                </ul>
+            </address>
+        </header>
+        <div class="resume-form__body">
+            <div class="resume-form__section experience grid grid--1-2">
+                <h5 class="experience__title">Опыт работы</h5>
+                <div class="experience__body">
+                    <div class="experience__inner">
+                        <div class="experience__head">
+                            <h6 class="experience__subtitle">Собственные сайты</h6>
                         </div>
-                        <h1 class="hero__title">Product Designer</h1>
-                        <div class="hero__description">
-                            <p>I’m from Singapore and I have been working as a Product Designer for more than 7 years. I’ve worked for a Hanziree company Pabloo as a Product Designer and Front-end Developer for 3 years.</p>
+                        <p><time datetime="2023">с 2023</time></p>
+                    </div>
+                    <div class="experience__description">
+                        <p>Регулярно практикуюсь в создании пет проектов для развития собственных навыков и для понимания реальных задач и проблем.</p>
+                    </div>
+                </div>
+                <h5 class="experience__title"></h5>
+                <div class="experience__body">
+                    <div class="experience__inner">
+                        <div class="experience__head">
+                            <h6 class="experience__subtitle">Работа с клиентами</h6>
+                            <p>Фрилансер</p>
+                        </div>
+                        <p><time datetime="2023">с 2023</time></p>
+                    </div>
+                    <div class="experience__description">
+                        <p>Верстаю дизайны сайтов на заказ. Ставил некоторые из них на CMS, такие, как Joomla, DataLife Engine.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="resume-form__section education grid grid--1-2">
+                <h5 class="education__title">Образование</h5>
+                <div class="education__body">
+                    <div class="education__inner">
+                        <div class="education__head">
+                            <h6 class="education__subtitle">АПЭК</h6>
+                            <p>Программист</p>
+                        </div>
+                        <p><time datetime="2021">с 2021</time></p>
+                    </div>
+                    <div class="education__description">
+                        <p>В Алтайском промышленно-экономическом колледже обучали 3 года. Писал прикладные программы на C++, C# и мобильные на Java. Создавал SQL базы данных, связывал их со своими приложениями. Красный диплом.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="resume-form__section skill grid grid--1-2">
+                <h5 class="skill__title">Навыки</h5>
+                <div class="skill__body">
+                    <div class="skill__inner grid grid--3">
+                        <div class="skill__head">
+                            <h6 class="skill__subtitle">HTML5/CSS3</h6>
+                            <p>БЭМ</p>
+                            <p>SASS/SCSS</p>
+                        </div>
+                        <div class="skill__head">
+                            <h6 class="skill__subtitle">Javascript</h6>
+                            <p>Vanilla JS</p>
+                        </div>
+                        <div class="skill__head">
+                            <h6 class="skill__subtitle">Программы</h6>
+                            <p>Visual Studio Code</p>
+                            <p>Microsoft Visual Studio</p>
+                        </div>
+                        <div class="skill__head">
+                            <h6 class="skill__subtitle">CMS</h6>
+                            <p>DataLife Engine</p>
+                            <p>Joomla</p>
+                        </div>
+                        <div class="skill__head">
+                            <h6 class="skill__subtitle">VCS</h6>
+                            <p>Git</p>
+                        </div>
+                        <div class="skill__head">
+                            <h6 class="skill__subtitle">Инструменты баз данных</h6>
+                            <p>Firebase Database</p>
+                            <p>Open Server Panel</p>
+                            <p>SSMS</p>
                         </div>
                     </div>
-                    <div class="hero__actions">
-                        <button class="hero__button button">Email Me</button>
-                        <a href="/" class="hero__download">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                                <defs>
-                                    <clipPath id="clip1_214">
-                                        <rect id="Frame" rx="-0.500000" width="23.000000" height="23.000000" transform="translate(0.500000 0.500000)" fill="white" fill-opacity="0"/>
-                                    </clipPath>
-                                </defs>
-                                <rect id="Frame" rx="-0.500000" width="23.000000" height="23.000000" transform="translate(0.500000 0.500000)" fill="#FFFFFF" fill-opacity="0"/>
-                                <g clip-path="url(#clip1_214)">
-                                    <path id="Vector" d="M12 2.25C12.19 2.25 12.38 2.32 12.53 2.46C12.67 2.61 12.75 2.8 12.75 3L12.75 14.68L15.97 11.47C16.03 11.39 16.12 11.33 16.21 11.29C16.3 11.25 16.4 11.23 16.5 11.23C16.6 11.22 16.7 11.24 16.79 11.28C16.89 11.32 16.97 11.37 17.04 11.45C17.12 11.52 17.17 11.6 17.21 11.7C17.25 11.79 17.27 11.89 17.26 11.99C17.26 12.09 17.24 12.19 17.2 12.28C17.16 12.37 17.1 12.46 17.03 12.53L12.53 17.03C12.38 17.17 12.19 17.24 12 17.24C11.8 17.24 11.61 17.17 11.47 17.03L6.97 12.53C6.89 12.46 6.83 12.37 6.79 12.28C6.75 12.19 6.73 12.09 6.73 11.99C6.72 11.89 6.74 11.79 6.78 11.7C6.82 11.6 6.87 11.52 6.95 11.45C7.02 11.37 7.1 11.32 7.2 11.28C7.29 11.24 7.39 11.22 7.49 11.23C7.59 11.23 7.69 11.25 7.78 11.29C7.87 11.33 7.96 11.39 8.03 11.47L11.25 14.68L11.25 3C11.25 2.8 11.32 2.61 11.46 2.46C11.61 2.32 11.8 2.25 12 2.25ZM3 15.75C3.19 15.75 3.38 15.82 3.53 15.96C3.67 16.11 3.75 16.3 3.75 16.5L3.75 18.75C3.75 19.14 3.9 19.52 4.18 19.81C4.47 20.09 4.85 20.25 5.25 20.25L18.75 20.25C19.14 20.25 19.52 20.09 19.81 19.81C20.09 19.52 20.25 19.14 20.25 18.75L20.25 16.5C20.25 16.3 20.32 16.11 20.46 15.96C20.61 15.82 20.8 15.75 21 15.75C21.19 15.75 21.38 15.82 21.53 15.96C21.67 16.11 21.75 16.3 21.75 16.5L21.75 18.75C21.75 19.54 21.43 20.3 20.87 20.87C20.3 21.43 19.54 21.75 18.75 21.75L5.25 21.75C4.45 21.75 3.69 21.43 3.12 20.87C2.56 20.3 2.25 19.54 2.25 18.75L2.25 16.5C2.25 16.3 2.32 16.11 2.46 15.96C2.61 15.82 2.8 15.75 3 15.75Z" fill="#808080" fill-opacity="1.000000" fill-rule="evenodd"/>
-                                </g>
-                            </svg>
-                            Download CV
+                </div>
+            </div>
+        </div>
+    </div>
+</dialog>
+
+<dialog class="contact-overlay" id="contactOverlay">
+    <form method="dialog" class="contact-overlay__close-button-wrapper">
+        <button class="contact-overlay__close-button cross-button" type="submit">
+            <span class="visually-hidden">Закрыть окно с контактом</span>
+        </button>
+    </form>
+    <form class="contact-overlay__form contact-form">
+        <div class="contact-form__socials socials">
+            <ul class="socials__list">
+                <li class="socials__item">
+                    <p>
+                        <a
+                          href="https://t.me/wwhopelessww"
+                          rel="nofollow"
+                          target="_blank"
+                        >
+                            Telegram
                         </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section container">
-            <header class="section__header">
-                <h2 class="section__title">7+ years experience working</h2>
-                <div class="section__description">
-                    <h3 class="section__subtitle subtitle h4">Services</h3>
-                    <div class="subtitle__description">
-                        <p>Discover the best services I offer, designed to ensure the success of your project.</p>
-                    </div>
-                </div>
-            </header>
-            <div class="section__body">
-                <div class="experience">
-                    <ul class="experience__list">
-                        <li class="experience__item">
-                            <article class="experience-card">
-                                <div class="experience-card__body">
-                                    <img src="/images/icons/experience/design.svg" alt="design" width="50" height="47" loading="lazy">
-                                    <div class="experience-card__main">
-                                        <h3 class="experience-card__title">Product design</h3>
-                                        <div class="experience-card__description">
-                                            <p>I offer innovative and attention-grabbing product design services. From initial ideation to implementation.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </article>
-                        </li>
-                        <li class="experience__item">
-                            <article class="experience-card">
-                                <div class="experience-card__body">
-                                    <img src="/images/icons/experience/develop.svg" alt="develop" width="50" height="47" loading="lazy">
-                                    <div class="experience-card__main">
-                                        <h3 class="experience-card__title">Frontend develop</h3>
-                                        <div class="experience-card__description">
-                                            <p>Specialize in responsive and interactive front-end development. With a deep understanding of HTML, CSS, and JS.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </article>
-                        </li>
-                        <li class="experience__item">
-                            <article class="experience-card">
-                                <div class="experience-card__body">
-                                    <img src="/images/icons/experience/strategy.svg" alt="strategy" width="50" height="47" loading="lazy">
-                                    <div class="experience-card__main">
-                                        <h3 class="experience-card__title">Brand strategy</h3>
-                                        <div class="experience-card__description">
-                                            <p>I help design strong and captivating brand strategies. Through thorough research and market analysis.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </article>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <section class="section section--gray container">
-            <header class="section__header">
-                <div class="section__header-inner">
-                    <h3 class="section__subtitle subtitle h4">Recent Work</h3>
-                    <h2 class="section__title">Some of my favorite projects</h2>
-                </div>
-            </header>
-            <div class="section__body">
-                <div class="projects">
-                    <ul class="projects__list grid grid--2">
-                        <li class="projects__item">
-                            <article class="project-card">
-                                <img src="/images/projects/alana.jpeg" alt="alana" width="550" height="368" loading="lazy">
-                                <div class="project-card__body">
-                                    <h3 class="project-card__title">Alana - live data app</h3>
-                                    <a href="/" class="project-card__link">
-                                        <span class="project-card__link-label">See project</span>
-                                        <span class="project-card__link-icon-wrapper">
-                                            <svg width="16" height="16" viewBox="0 0 16.4813 16.4813" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                                                <defs/>
-                                                <path id="Vector" d="M4.48 0L15.73 0C15.93 0 16.12 0.07 16.26 0.21C16.4 0.36 16.48 0.55 16.48 0.75L16.48 12C16.48 12.19 16.4 12.38 16.26 12.53C16.12 12.67 15.93 12.75 15.73 12.75C15.53 12.75 15.34 12.67 15.2 12.53C15.06 12.38 14.98 12.19 14.98 12L14.98 2.56L1.26 16.28C1.11 16.41 0.93 16.48 0.73 16.48C0.54 16.47 0.35 16.39 0.21 16.26C0.08 16.12 0 15.93 0 15.74C-0.01 15.55 0.06 15.36 0.2 15.22L13.92 1.5L4.48 1.5C4.28 1.5 4.09 1.42 3.95 1.28C3.81 1.13 3.73 0.94 3.73 0.75C3.73 0.55 3.81 0.36 3.95 0.21C4.09 0.07 4.28 0 4.48 0Z" fill="#079211" fill-opacity="1.000000" fill-rule="evenodd"/>
-                                            </svg>
-                                        </span>
-                                    </a>
-                                </div>
-                            </article>
-                        </li>
-                        <li class="projects__item">
-                            <article class="project-card">
-                                <img src="/images/projects/card.jpeg" alt="card" width="550" height="368" loading="lazy">
-                                <div class="project-card__body">
-                                    <h3 class="project-card__title">Wohoo - weather app</h3>
-                                    <a href="/" class="project-card__link">
-                                        <span class="project-card__link-label">See project</span>
-                                        <span class="project-card__link-icon-wrapper">
-                                            <svg width="16" height="16" viewBox="0 0 16.4813 16.4813" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                                                <defs/>
-                                                <path id="Vector" d="M4.48 0L15.73 0C15.93 0 16.12 0.07 16.26 0.21C16.4 0.36 16.48 0.55 16.48 0.75L16.48 12C16.48 12.19 16.4 12.38 16.26 12.53C16.12 12.67 15.93 12.75 15.73 12.75C15.53 12.75 15.34 12.67 15.2 12.53C15.06 12.38 14.98 12.19 14.98 12L14.98 2.56L1.26 16.28C1.11 16.41 0.93 16.48 0.73 16.48C0.54 16.47 0.35 16.39 0.21 16.26C0.08 16.12 0 15.93 0 15.74C-0.01 15.55 0.06 15.36 0.2 15.22L13.92 1.5L4.48 1.5C4.28 1.5 4.09 1.42 3.95 1.28C3.81 1.13 3.73 0.94 3.73 0.75C3.73 0.55 3.81 0.36 3.95 0.21C4.09 0.07 4.28 0 4.48 0Z" fill="#079211" fill-opacity="1.000000" fill-rule="evenodd"/>
-                                            </svg>
-                                        </span>
-                                    </a>
-                                </div>
-                            </article>
-                        </li>
-                        <li class="projects__item">
-                            <article class="project-card">
-                                <img src="/images/projects/pagee.jpeg" alt="pagee" width="550" height="368" loading="lazy">
-                                <div class="project-card__body">
-                                    <h3 class="project-card__title">Pagee - real estate UI kit</h3>
-                                    <a href="/" class="project-card__link">
-                                        <span class="project-card__link-label">See project</span>
-                                        <span class="project-card__link-icon-wrapper">
-                                            <svg width="16" height="16" viewBox="0 0 16.4813 16.4813" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                                                <defs/>
-                                                <path id="Vector" d="M4.48 0L15.73 0C15.93 0 16.12 0.07 16.26 0.21C16.4 0.36 16.48 0.55 16.48 0.75L16.48 12C16.48 12.19 16.4 12.38 16.26 12.53C16.12 12.67 15.93 12.75 15.73 12.75C15.53 12.75 15.34 12.67 15.2 12.53C15.06 12.38 14.98 12.19 14.98 12L14.98 2.56L1.26 16.28C1.11 16.41 0.93 16.48 0.73 16.48C0.54 16.47 0.35 16.39 0.21 16.26C0.08 16.12 0 15.93 0 15.74C-0.01 15.55 0.06 15.36 0.2 15.22L13.92 1.5L4.48 1.5C4.28 1.5 4.09 1.42 3.95 1.28C3.81 1.13 3.73 0.94 3.73 0.75C3.73 0.55 3.81 0.36 3.95 0.21C4.09 0.07 4.28 0 4.48 0Z" fill="#079211" fill-opacity="1.000000" fill-rule="evenodd"/>
-                                            </svg>
-                                        </span>
-                                    </a>
-                                </div>
-                            </article>
-                        </li>
-                        <li class="projects__item">
-                            <article class="project-card">
-                                <img src="/images/projects/keikoko.jpeg" alt="keikoko" width="550" height="368" loading="lazy">
-                                <div class="project-card__body">
-                                    <h3 class="project-card__title">Keikoko - agency web</h3>
-                                    <a href="/" class="project-card__link">
-                                        <span class="project-card__link-label">See project</span>
-                                        <span class="project-card__link-icon-wrapper">
-                                            <svg width="16" height="16" viewBox="0 0 16.4813 16.4813" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                                                <defs/>
-                                                <path id="Vector" d="M4.48 0L15.73 0C15.93 0 16.12 0.07 16.26 0.21C16.4 0.36 16.48 0.55 16.48 0.75L16.48 12C16.48 12.19 16.4 12.38 16.26 12.53C16.12 12.67 15.93 12.75 15.73 12.75C15.53 12.75 15.34 12.67 15.2 12.53C15.06 12.38 14.98 12.19 14.98 12L14.98 2.56L1.26 16.28C1.11 16.41 0.93 16.48 0.73 16.48C0.54 16.47 0.35 16.39 0.21 16.26C0.08 16.12 0 15.93 0 15.74C-0.01 15.55 0.06 15.36 0.2 15.22L13.92 1.5L4.48 1.5C4.28 1.5 4.09 1.42 3.95 1.28C3.81 1.13 3.73 0.94 3.73 0.75C3.73 0.55 3.81 0.36 3.95 0.21C4.09 0.07 4.28 0 4.48 0Z" fill="#079211" fill-opacity="1.000000" fill-rule="evenodd"/>
-                                            </svg>
-                                        </span>
-                                    </a>
-                                </div>
-                            </article>
-                        </li>
-                    </ul> 
-                </div>
-            </div>
-        </section>
-
-        <section class="section container">
-            <header class="section__header section__header--center">
-                <div class="section__header-inner section__header-inner--center">
-                    <h3 class="section__subtitle subtitle h4">Testimonials</h3>
-                    <h2 class="section__title">My happy clients</h2>
-                </div>
-            </header>
-            <div class="section__body">
-                <div class="clients ">
-                    <div class="clients__slider swiper">
-                        <ul class="clients__slider-list swiper-wrapper">
-                            <li class="clients__slider-item swiper-slide">
-                                <div class="clients__slider-opinion">
-                                    <p>"Wow is all i can say! Alifreza did an absolute fenominal job from start to finish. He created exactly what I wanted and exceeded my expectation. Highly recommend alifreza!"</p>
-                                </div>
-                                <div class="clients__slider-info">
-                                    <img src="/images/clients/monalisa.jpeg" alt="monalisa" width="50" height="50" loading="lazy">
-                                    <div class="clients__slider-about">
-                                        <h4 class="clients__slider-name">Monalisa Nona</h4>
-                                        <p class="clients__slider-post">Project Manager, Ruber</p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="clients__slider-item swiper-slide">
-                                <div class="clients__slider-opinion">
-                                    <p>"Wow is all i can say! Alifreza did an absolute fenominal job from start to finish. He created exactly what I wanted and exceeded my expectation. Highly recommend alifreza!"</p>
-                                </div>
-                                <div class="clients__slider-info">
-                                    <img src="/images/clients/monalisa.jpeg" alt="monalisa" width="50" height="50" loading="lazy">
-                                    <div class="clients__slider-about">
-                                        <h4 class="clients__slider-name">Monalisa Nona1</h4>
-                                        <p class="clients__slider-post">Project Manager, Ruber</p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="clients__slider-item swiper-slide">
-                                <div class="clients__slider-opinion">
-                                    <p>"Wow is all i can say! Alifreza did an absolute fenominal job from start to finish. He created exactly what I wanted and exceeded my expectation. Highly recommend alifreza!"</p>
-                                </div>
-                                <div class="clients__slider-info">
-                                    <img src="/images/clients/monalisa.jpeg" alt="monalisa" width="50" height="50" loading="lazy">
-                                    <div class="clients__slider-about">
-                                        <h4 class="clients__slider-name">Monalisa Nona2</h4>
-                                        <p class="clients__slider-post">Project Manager, Ruber</p>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-
-                        <div class="swiper-pagination"></div>
-
-                        <div class="swiper-button-prev"></div>
-                        <div class="swiper-button-next"></div>
-
-                    </div>
-
-                </div>
-
-            </div>
-        </section>
-
-        <section class="section section--contact container">
-            <div class="section__body">
-                <div class="contact">
-                    <div class="contact__info">
-                        <h2 class="contact__title">Have any project in mind?</h2>
-                        <div class="contact__description">
-                            <p>Feel free to contact me or just say friendly hello!</p>
-                        </div>
-                    </div>
-                    <div class="contact__button">
-                        <button class="contact__button button">Contact Me</button>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer container">
-         <div class="footer__body">
-            <div class="footer__logo logo">
-                <a href="/" class="footer__logo-link">
-                    Alifreza<span>.</span>
-                </a>
-            </div>
-            <div class="footer__body-inner">
-                <address class="footer__info info">
-                    <h4 class="info__title">Information</h4>
-                    <ul class="info__list">
-                        <li class="info__item">
-                            <p><a href="tel:9293497238">(929)349-72-38</a></p>
-                        </li>
-                        <li class="info__item">
-                            <p><a href="mailto:info@positivus.com">info@positivus.com</a></p>
-                        </li>
-                        <li class="info__item">
-                            <p>Changi Bay, Singapura</p>
-                        </li>
-                    </ul>
-                </address>
-                <div class="footer__socials socials">
-                    <h4 class="socials__title">Social Media</h4>
-                    <ul class="socials__list">
-                        <li class="socials__item">
-                            <p><a href="/">Dribbble</a></p>
-                        </li>
-                        <li class="socials__item">
-                            <p><a href="/">Behance</a></p>
-                        </li>
-                        <li class="socials__item">
-                            <p><a href="/">Linkedin</a></p>
-                        </li>
-                    </ul>
-                </div> 
-            </div>
-         </div>
-         <div class="footer__extra">
-            <div class="footer__author">
-                <p>Design and develop by <span>Alifreza</span></p>
-            </div>
-            <div class="footer__copyright">
-                <p>Copyright ©<time datetime="2024">2024</time></p>
-            </div>
-         </div>
-    </footer>
-
-    <dialog class="mobile-overlay visible-mobile" id="mobileOverlay">
-        <form class="mobile-overlay__close-button-wrapper">
-            <button class="mobile-overlay__close-button cross-button" type="submit">
-                <span class="visually-hidden">Close navigation menu</span>
-            </button>
-        </form>
-        <div class="mobile-overlay__menu">
-            <ul class="mobile-overlay__list">
-                <li class="mobile-overlay__item">
-                    <a href="/" class="mobile-overlay__link">Home</a>
+                    </p>
                 </li>
-                <li class="mobile-overlay__item">
-                    <a href="/" class="mobile-overlay__link">Services</a>
+                <li class="socials__item">
+                    <p><a href="https://vk.com/matsnevl" rel="nofollow" target="_blank">VK</a></p>
                 </li>
-                <li class="mobile-overlay__item">
-                    <a href="/" class="mobile-overlay__link">Work</a>
-                </li>
-                <li class="mobile-overlay__item">
-                    <a href="/" class="mobile-overlay__link">About me</a>
-                </li>
-                <li class="mobile-overlay__item">
-                    <a href="/" class="mobile-overlay__link">Blog</a>
+                <li class="socials__item">
+                    <p><a href="https://discordapp.com/users/379675361665089536/" rel="nofollow" target="_blank">Discord</a></p>
                 </li>
             </ul>
         </div>
-    </dialog>
+    </form>
+</dialog>
 
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="js/slider.js"></script>
+<dialog class="send-email-overlay" id="sendEmailOverlay" data-js-send-email>
+    <form method="dialog" class="send-email-overlay__close-button-wrapper">
+        <button class="send-email-overlay__close-button cross-button" type="submit">
+            <span class="visually-hidden">Закрыть email окно</span>
+        </button>
+    </form>
+    <form class="send-email-overlay__form send-email-form">
+        <div class="send-email-form__field field">
+            <label class="field__label" for="send-email">Email</label>
+            <input
+              class="field__input"
+              id="send-email"
+              name="email"
+              value="flash.matsnev132@gmail.com"
+              type="email"
+              disabled
+              data-js-send-email-input
+            />
+            <div class="field__btn-inner">
+                <button
+                  class="button button--transparent"
+                  type="button"
+                  data-js-send-email-button
+                >
+                    Скопировать
+                </button>
+            </div>
+        </div>
+    </form>
+</dialog>
+
+<script src="./js/ProgressBar.js"></script>
+<script src="./js/ColorMenu.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="./js/Slider.js"></script>
 </body>
 </html>

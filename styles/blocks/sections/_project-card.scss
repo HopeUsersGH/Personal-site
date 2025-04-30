@@ -1,18 +1,46 @@
-.project-card {
-    display: flex;
-    flex-direction: column;
-    row-gap: 20px;
+@use '../../helpers' as *;
 
-    @include desktop {
-        align-items: center;
+.project-card {
+
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        row-gap: 20px;
+        cursor: pointer;
+    
+        @include hover {
+            .project-card {
+    
+                &__title {
+                    color:var(--color-accent);
+    
+                }
+    
+                &__img {
+                    img {
+                        transform: scale(1.2);
+                    }
+                }
+            }
+        }
+
+        @include desktop {
+            align-items: center;
+        }
     }
 
-    &__link {
-        display: flex;
-        align-items: center;
-        column-gap: 10px;
-        font-size: 20px;
-        line-height: 24px;
-        color:var(--color-accent);
+    &__img {
+        overflow: hidden;
+        
+
+
+        img {
+            object-fit: cover;
+            transition-duration: var(--transition-duration-img);
+        }
+    }
+
+    &__title {
+        transition-duration: var(--transition-duration);
     }
 }

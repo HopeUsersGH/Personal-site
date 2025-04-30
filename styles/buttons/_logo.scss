@@ -1,0 +1,17 @@
+@use '../helpers' as *;
+
+.logo {
+    font-size: 28px;
+    color: var(--color-light);
+    font-weight: 700;
+
+    &-link {
+        span {
+            color: var(--color-accent);
+        }
+
+        @include hover {
+            color: var(--color-accent);
+        }
+    }
+}

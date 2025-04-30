@@ -1,0 +1,46 @@
+@use '../helpers' as *;
+
+.field {
+    
+    display: flex;
+    flex-direction: column;
+    row-gap: 1px;
+
+    &__label {
+        @include fluid-text(16, 14);
+    }
+
+    &__input {
+        width: 100%;
+        padding: 10px 15px;
+        background-color: var(--color-dark-light);
+        color: var(--color-light);
+        
+        @include hover {
+            background-color: var(--color-accent);
+        }
+
+        &:focus {
+            border-color: var(--color-accent);
+            outline: none;
+        }
+
+        &::placeholder {
+            color: var(--color-light);
+        }
+
+    }
+
+    &__inner {
+        display: flex;
+        column-gap: 1px;
+    }
+
+    &__btn-inner {
+        position: relative;
+        
+        & button {
+            width: 100%;
+        }
+    }
+}

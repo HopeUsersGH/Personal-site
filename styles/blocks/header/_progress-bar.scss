@@ -1,0 +1,10 @@
+@use '../../helpers' as *;
+
+.progress-bar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 4px;
+    width: 0%;
+    background: var(--color-accent);
+}

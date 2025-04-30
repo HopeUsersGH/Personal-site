@@ -1,0 +1,48 @@
+@use '../helpers' as *;
+
+.cross-button {
+    @include reset-button;
+    @include square (40px);
+
+    position: relative;
+    cursor: pointer;
+
+    @include hover {
+        &::after,
+        &::before {
+            --colorBurgerLines: var(--color-accent);
+        }
+    }
+    &::after,
+    &::before {
+        --colorBurgerLines: var(--color-light);
+
+        @include abs-center;
+
+        content: '';
+        width: 80%;
+        height: 2px;
+        background-color: var(--colorBurgerLines);
+        border-radius: 1px;
+        transition-duration: var(--transition-duration);
+    }
+
+    &::after {
+        rotate: -45deg;
+    }
+
+    &::before {
+        rotate: 45deg;
+    }
+}
+
+.send-email-overlay,
+.contact-overlay,
+.resume-overlay,
+.project-card-overlay {
+    &__close-button-wrapper {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+    }
+}

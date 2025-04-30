@@ -1,0 +1,31 @@
+@use '../helpers' as *;
+
+.button {
+    @include flex-center;
+
+    padding: 18px 28px;
+    background-color: var(--color-accent);
+    border: var(--border);
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--color-light);
+    line-height: 18px;
+    min-height: var(--button-height-large);
+    cursor: pointer;
+
+    @include hover {
+        background-color: transparent;
+    }
+
+    &--transparent {
+        padding: 10px 16px;
+        background-color: transparent;
+        font-size: 14px;
+        min-height: var(--button-height);
+
+        @include hover {
+            background-color: var(--color-accent);
+        }
+    }
+
+}

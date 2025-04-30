@@ -1,22 +1,14 @@
+@use '../../helpers' as *;
+
 .header {
+    position: sticky;
+    top: 0;
+    z-index: 999;
     padding: 18px 0 var(--section-padding-y);
-    
+
+    background: linear-gradient(to bottom, var(--color-dark), transparent);
     color: var(--color-light);
     font-weight: 700;
-
-    &__logo {
-        font-size: 28px;
-        
-        @include hover {
-            color: var(--color-accent);
-        }
-
-        &-link {
-            span {
-                color: var(--color-accent);
-            }
-        }
-    }
 
     &__inner {
         display: flex;
@@ -66,6 +58,47 @@
                 width: 0;
                 border-bottom: 1px solid var(--color-light);
                 transition-duration: var(--transition-duration);
+            }
+
+            &.active {
+                color: var(--color-accent);
+            }
+        }
+    }
+
+    &__vertical {
+        &-menu {
+            position: absolute;
+            top: 18px;
+            right: 10px;
+
+            &-link {
+                display: block;
+                @include square (38px);
+                position: relative;
+
+                &.active {
+                    &::before {
+                        background-color: var(--color-accent);
+                    }
+                }
+
+                @include hover {
+                    background-color: transparent;
+
+                    &::before {
+                        background-color: var(--color-accent);
+                    }
+                }
+
+                &::before {
+                    content: '';
+                    @include abs-center;
+                    @include square (18px);
+                    background-color: var(--color-light);
+                    border-radius: 50%;
+                    transition-duration: var(--transition-duration);
+                }
             }
         }
     }
