@@ -1,5 +1,11 @@
-import FollowUrlCollection from "./FollowUrl.js"
-import CopyButtonCollection from "./CopyButton.js"
+import ProgressBar from "./ProgressBar.js"
+import TypedAnimateText from "./TypedAnimateText.js"
+import PromoMoveXY from "./PromoMoveXY.js"
+import HorizontalMenuCollection from "./ChangeColorMenu/HorizontalMenu.js"
+import VerticalMenuCollection from "./ChangeColorMenu/VerticalMenu.js";
 
-new FollowUrlCollection()
-new CopyButtonCollection()
+new ProgressBar()
+new TypedAnimateText()
+new PromoMoveXY()
+new HorizontalMenuCollection()
+new VerticalMenuCollection()

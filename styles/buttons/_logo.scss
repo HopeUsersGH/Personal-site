@@ -1,6 +1,9 @@
 @use '../helpers' as *;
 
 .logo {
+    display: flex;
+    align-items: center;
+    min-height: 40px;
     font-size: 28px;
     color: var(--color-light);
     font-weight: 700;

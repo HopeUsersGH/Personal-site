@@ -18,9 +18,7 @@
     }
 
     &--transparent {
-        padding: 10px 16px;
         background-color: transparent;
-        font-size: 14px;
         min-height: var(--button-height);
 
         @include hover {

@@ -1,0 +1,143 @@
+@use '../../helpers' as *;
+
+.promo {
+  perspective: 1000px;
+  overflow: hidden;
+  padding: 0;
+
+  &__container {
+    height: 100vh;
+    min-height: 500px;
+    transform-style: preserve-3d;
+    transform: rotateX(var(--move-y)) rotateY(var(--move-x));
+    will-change: transform;
+    transition: transform var(--transition-promo);
+  }
+
+  &__item {
+    position: absolute;
+    inset: -5vw;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+  }
+
+  &__subtitle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100px;
+
+    & .typed-cursor {
+      @include fluid-text(40, 46);
+
+      color: var(--color-light);
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: center;
+    column-gap: 30px;
+  }
+
+  &-layer {
+    &-1 {
+      transform: translateZ(-55px) scale(1.06);
+      background-image: url("../../../images/promo/layer-1.jpg");
+    }
+
+    &-2 {
+      transform: translateZ(80px) scale(.91);
+      background-image: url("../../../images/promo/layer-2.png");
+    }
+
+    &-3 {
+      transform: translateZ(180px) scale(.8);
+    }
+
+    &-4 {
+      transform: translateZ(190px) scale(.9);
+      background-image: url("../../../images/promo/layer-4.png");
+    }
+
+    &-5 {
+      transform: translateZ(300px) scale(.9);
+      background-image: url("../../../images/promo/layer-5.png");
+    }
+
+    &-6 {
+      transform: translateZ(380px);
+      background-image: url("../../../images/promo/layer-6.png");
+    }
+
+    &-4,
+    &-5,
+    &-6 {
+      pointer-events: none;
+    }
+  }
+
+  &__soc1als {
+    position: absolute;
+    top: 20%;
+    color: var(--color-light);
+    left: 50%;
+    translate: -50% -50%;
+
+    & svg {
+      @include square(48px);
+
+      fill: currentColor;
+
+      @include hover {
+        fill: var(--color-accent);
+      }
+    }
+
+    & .soc1als {
+      &__list {
+        display: flex;
+        flex-direction: row;
+        column-gap: 20px;
+      }
+
+      &__item a[title="Discord"] {
+        @include square(48px);
+
+        position: relative;
+        display: block;
+
+        @include hover {
+          &::after {
+            background-color: var(--color-accent);
+          }
+        }
+
+        &::after {
+          @include square(48px);
+          @include abs-center;
+
+          content: "";
+          background:
+                  url('../../../images/icons/discord.svg') center no-repeat
+                  var(--color-light);
+          border-radius: 50%;
+          transition-duration: var(--transition-duration);
+        }
+      }
+
+      &__item:not(:last-child) {
+        margin: 0;
+      }
+    }
+  }
+}

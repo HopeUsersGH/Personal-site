@@ -188,9 +188,6 @@ svg * {
   font-style: normal;
   font-display: swap;
 }
-/*@mixin fluid-text($max: 48, $min: 16) {
-    font-size: fluid($max, $min);
-}*/
 :root {
   --color-dark-deep: #050507;
   --color-dark: #101017;
@@ -212,6 +209,7 @@ svg * {
   --border: 1px solid var(--color-accent);
   --transition-duration: .2s;
   --transition-duration-img: 1s;
+  --transition-promo: 1.5s cubic-bezier(.05, .5, 0, 1);
 }
 
 .container {
@@ -260,7 +258,7 @@ body {
   background-color: var(--color-dark);
   font-weight: 400;
   line-height: 19px;
-  font-family: "Inter", sans-serif;
+  font-family: "Inter", system-ui, sans-serif;
   color: var(--color-gray);
   overflow-x: hidden;
 }
@@ -288,12 +286,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1, .h1 {
-  font-size: clamp(60px, 6.1111111111vw, 88px);
+  font-size: clamp(50px, 6.1111111111vw, 88px);
   line-height: 94px;
 }
 
 h2, .h2 {
-  font-size: clamp(40px, 3.1944444444vw, 46px);
+  font-size: clamp(30px, 3.1944444444vw, 46px);
 }
 
 h3, .h3 {
@@ -340,6 +338,9 @@ dialog::backdrop {
 }
 
 .logo {
+  display: flex;
+  align-items: center;
+  min-height: 40px;
   font-size: 28px;
   color: var(--color-light);
   font-weight: 700;
@@ -383,9 +384,7 @@ dialog::backdrop {
   }
 }
 .button--transparent {
-  padding: 10px 16px;
   background-color: transparent;
-  font-size: 14px;
   min-height: var(--button-height);
 }
 @media (hover: hover) {
@@ -438,9 +437,7 @@ dialog::backdrop {
   rotate: 45deg;
 }
 
-.send-email-overlay__close-button-wrapper,
 .contact-overlay__close-button-wrapper,
-.resume-overlay__close-button-wrapper,
 .project-card-overlay__close-button-wrapper {
   position: absolute;
   top: 10px;
@@ -489,45 +486,6 @@ dialog::backdrop {
   width: 100%;
 }
 
-.resume-form {
-  display: flex;
-  flex-direction: column;
-  row-gap: 20px;
-}
-.resume-form__body {
-  display: flex;
-  flex-direction: column;
-  row-gap: 20px;
-}
-.resume-form__spot {
-  line-height: 2.1;
-}
-.resume-form__info .info__item:not(:last-child) {
-  margin-bottom: 10px;
-}
-.resume-form p:where(:not([class]):not(:last-child)) {
-  margin-bottom: 0;
-}
-
-.education__body,
-.experience__body {
-  display: flex;
-  flex-direction: column;
-  row-gap: 10px;
-}
-.education__inner,
-.experience__inner {
-  display: flex;
-  justify-content: space-between;
-}
-
-.send-email-form {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: calc(100% - 40px);
-}
-
 .contact-form {
   text-align: center;
   color: var(--color-gray);
@@ -559,12 +517,26 @@ dialog::backdrop {
   }
 }
 
+.soc1als__item:not(:last-child) {
+  margin-bottom: 20px;
+}
+@media (hover: hover) {
+  .soc1als__link:hover {
+    color: var(--color-light);
+  }
+}
+@media (hover: none) {
+  .soc1als__link:active {
+    color: var(--color-light);
+  }
+}
+
 .header {
-  position: sticky;
-  top: 0;
+  position: fixed;
+  width: 100%;
   z-index: 999;
-  padding: 18px 0 var(--section-padding-y);
-  background: linear-gradient(to bottom, var(--color-dark), transparent);
+  padding: 18px 0;
+  background: var(--color-dark-deep);
   color: var(--color-light);
   font-weight: 700;
 }
@@ -626,7 +598,7 @@ dialog::backdrop {
   border-bottom: 1px solid var(--color-light);
   transition-duration: var(--transition-duration);
 }
-.header__menu-link.active {
+.header__menu-link.is-active {
   color: var(--color-accent);
 }
 .header__vertical-menu {
@@ -640,7 +612,7 @@ dialog::backdrop {
   height: 38px;
   position: relative;
 }
-.header__vertical-menu-link.active::before {
+.header__vertical-menu-link.is-active::before {
   background-color: var(--color-accent);
 }
 @media (hover: hover) {
@@ -681,39 +653,6 @@ dialog::backdrop {
   background: var(--color-accent);
 }
 
-.swiper-wrapper {
-  margin-bottom: 72px;
-}
-.swiper-slide {
-  padding-inline: var(--slide-padding-inline);
-}
-@media (min-width: 1281px) {
-  .swiper-slide {
-    --slide-padding-inline: 313px;
-  }
-}
-@media (min-width: 1024px) {
-  .swiper-slide {
-    --slide-padding-inline: 100px;
-  }
-}
-.swiper-pagination {
-  bottom: 0 !important;
-}
-.swiper-pagination-bullet {
-  background: var(--color-light) !important;
-  opacity: 1 !important;
-}
-.swiper-pagination-bullet-active {
-  background: var(--color-accent) !important;
-}
-.swiper-button-prev, .swiper-button-next {
-  color: var(--color-accent) !important;
-}
-.swiper-button-prev:after, .swiper-button-next:after {
-  font-size: 18px !important;
-}
-
 .grid {
   --gridColumn: 1;
   display: grid;
@@ -736,6 +675,8 @@ dialog::backdrop {
 }
 
 .section {
+  position: relative;
+  min-height: 100vh;
   padding-block: var(--section-padding-y);
 }
 @media (max-width: 1023px) {
@@ -782,6 +723,133 @@ dialog::backdrop {
   padding-block: 63px;
   background: var(--color-gray-deep);
   border-left: 10px solid var(--color-accent);
+}
+
+.promo {
+  perspective: 1000px;
+  overflow: hidden;
+  padding: 0;
+}
+.promo__container {
+  height: 100vh;
+  min-height: 500px;
+  transform-style: preserve-3d;
+  transform: rotateX(var(--move-y)) rotateY(var(--move-x));
+  will-change: transform;
+  transition: transform var(--transition-promo);
+}
+.promo__item {
+  position: absolute;
+  inset: -5vw;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.promo__content {
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+}
+.promo__subtitle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100px;
+}
+.promo__subtitle .typed-cursor {
+  font-size: clamp(40px, 3.1944444444vw, 46px);
+  color: var(--color-light);
+}
+.promo__buttons {
+  display: flex;
+  justify-content: center;
+  column-gap: 30px;
+}
+.promo-layer-1 {
+  transform: translateZ(-55px) scale(1.06);
+  background-image: url("../../../images/promo/layer-1.jpg");
+}
+.promo-layer-2 {
+  transform: translateZ(80px) scale(0.91);
+  background-image: url("../../../images/promo/layer-2.png");
+}
+.promo-layer-3 {
+  transform: translateZ(180px) scale(0.8);
+}
+.promo-layer-4 {
+  transform: translateZ(190px) scale(0.9);
+  background-image: url("../../../images/promo/layer-4.png");
+}
+.promo-layer-5 {
+  transform: translateZ(300px) scale(0.9);
+  background-image: url("../../../images/promo/layer-5.png");
+}
+.promo-layer-6 {
+  transform: translateZ(380px);
+  background-image: url("../../../images/promo/layer-6.png");
+}
+.promo-layer-4, .promo-layer-5, .promo-layer-6 {
+  pointer-events: none;
+}
+.promo__soc1als {
+  position: absolute;
+  top: 20%;
+  color: var(--color-light);
+  left: 50%;
+  translate: -50% -50%;
+}
+.promo__soc1als svg {
+  width: 48px;
+  height: 48px;
+  fill: currentColor;
+}
+@media (hover: hover) {
+  .promo__soc1als svg:hover {
+    fill: var(--color-accent);
+  }
+}
+@media (hover: none) {
+  .promo__soc1als svg:active {
+    fill: var(--color-accent);
+  }
+}
+.promo__soc1als .soc1als__list {
+  display: flex;
+  flex-direction: row;
+  column-gap: 20px;
+}
+.promo__soc1als .soc1als__item a[title=Discord] {
+  width: 48px;
+  height: 48px;
+  position: relative;
+  display: block;
+}
+@media (hover: hover) {
+  .promo__soc1als .soc1als__item a[title=Discord]:hover::after {
+    background-color: var(--color-accent);
+  }
+}
+@media (hover: none) {
+  .promo__soc1als .soc1als__item a[title=Discord]:active::after {
+    background-color: var(--color-accent);
+  }
+}
+.promo__soc1als .soc1als__item a[title=Discord]::after {
+  width: 48px;
+  height: 48px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  content: "";
+  background: url("../../../images/icons/discord.svg") center no-repeat var(--color-light);
+  border-radius: 50%;
+  transition-duration: var(--transition-duration);
+}
+.promo__soc1als .soc1als__item:not(:last-child) {
+  margin: 0;
 }
 
 .hero {
@@ -934,19 +1002,6 @@ dialog::backdrop {
   transition-duration: var(--transition-duration);
 }
 
-.clients__slider-opinion {
-  text-align: center;
-  margin-bottom: 37px;
-}
-.clients__slider-info {
-  display: flex;
-  justify-content: center;
-  column-gap: 20px;
-}
-.clients__slider-info img {
-  border-radius: 50%;
-}
-
 .contact {
   display: flex;
   justify-content: space-between;
@@ -1021,20 +1076,6 @@ dialog::backdrop {
 }
 @media (hover: none) {
   .info a:active {
-    color: var(--color-light);
-  }
-}
-
-.socials__item:not(:last-child) {
-  margin-bottom: 20px;
-}
-@media (hover: hover) {
-  .socials a:hover {
-    color: var(--color-light);
-  }
-}
-@media (hover: none) {
-  .socials a:active {
     color: var(--color-light);
   }
 }

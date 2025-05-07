@@ -60,16 +60,3 @@
         }
     }
 }
-
-.socials {
-    &__item:not(:last-child) {
-        margin-bottom: 20px;
-    }
-
-    & a { 
-        @include hover {
-            color: var(--color-light);
-        }
-    }
-}
-

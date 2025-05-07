@@ -6,7 +6,7 @@ body {
     background-color: var(--color-dark);
     font-weight: 400;
     line-height: 19px;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Inter', system-ui, sans-serif;
     color: var(--color-gray);
     overflow-x:hidden
 }
@@ -34,12 +34,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1, .h1 {
-    @include fluid-text(60, 88);
+    @include fluid-text(50, 88);
     line-height: 94px;
 }
 
 h2, .h2 {
-    @include fluid-text(40, 46);
+    @include fluid-text(30, 46);
 }
 
 h3, .h3 {

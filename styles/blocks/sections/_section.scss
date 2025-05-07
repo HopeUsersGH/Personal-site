@@ -1,12 +1,13 @@
 @use '../../helpers' as *;
 
 .section {
+    position: relative;
+    min-height: 100vh;
     padding-block: var(--section-padding-y);
-    
+
     @include tablet {
         padding-block: var(--section-tablet-padding-y);
     }
-
 
     &__header {
         display: flex;
