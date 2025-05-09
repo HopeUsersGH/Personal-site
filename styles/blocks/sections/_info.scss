@@ -1,0 +1,61 @@
+@use '../../helpers' as *;
+
+.info {
+  &__list {
+    display: grid;
+    row-gap: 20px;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+
+    &:not(:first-child) {
+      padding-left: 68px;
+    }
+
+    & a {
+      @include hover {
+        color: var(--color-light)
+      }
+    }
+
+    &[title="Address"],
+    &[title="Email"] {
+      @include square(48px);
+
+      position: relative;
+
+      &::before {
+        @include square(48px);
+
+        position: absolute;
+        top: 50%;
+        left: 0;
+        translate: 0 -50%;
+        content: "";
+        border-radius: 50%;
+        transition-duration: var(--transition-duration);
+      }
+    }
+
+    &[title="Email"]::before {
+      background:
+              url('../../images/icons/info/email.svg') center no-repeat
+              currentColor;
+    }
+
+    &[title="Address"]::before {
+      background:
+              url('../../images/icons/info/address.svg') center no-repeat
+              currentColor;
+    }
+  }
+
+  & svg {
+    @include square(48px);
+
+    fill: currentColor;
+  }
+}

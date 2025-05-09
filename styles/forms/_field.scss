@@ -1,23 +1,25 @@
 @use '../helpers' as *;
 
 .field {
-    
     display: flex;
     flex-direction: column;
-    row-gap: 1px;
+    align-items: start;
+    row-gap: 16px;
+    font-weight: 500;
 
     &__label {
         @include fluid-text(16, 14);
     }
 
-    &__input {
+    &__control {
         width: 100%;
         padding: 10px 15px;
-        background-color: var(--color-dark-light);
+        background-color: var(--color-gray-deep);
         color: var(--color-light);
-        
+        border: 1px solid var(--color-dark-light);
+
         @include hover {
-            background-color: var(--color-accent);
+            background-color: var(--color-dark-light);
         }
 
         &:focus {
@@ -26,21 +28,22 @@
         }
 
         &::placeholder {
-            color: var(--color-light);
+            color: var(--color-gray);
         }
 
-    }
-
-    &__inner {
-        display: flex;
-        column-gap: 1px;
-    }
-
-    &__btn-inner {
-        position: relative;
-        
-        & button {
-            width: 100%;
+        &:user-invalid {
+            border-color: var(--color-red);
         }
+    }
+
+    &__required-star {
+        color: var(--color-red);
+    }
+
+
+
+    textarea.field__control {
+        resize: vertical;
+        min-height: 120px;
     }
 }

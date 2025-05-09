@@ -2,7 +2,6 @@
 
 .section {
     position: relative;
-    min-height: 100vh;
     padding-block: var(--section-padding-y);
 
     @include tablet {
@@ -52,7 +51,6 @@
     }
 
     &--contact {
-        padding-block: 63px;
         background: var(--color-gray-deep);
         border-left: 10px solid var(--color-accent);
     }

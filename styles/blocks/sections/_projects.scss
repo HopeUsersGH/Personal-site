@@ -1,0 +1,8 @@
+@use '../../helpers' as *;
+
+.projects {
+  &__list {
+    justify-content: center;
+    justify-items: center;
+  }
+}

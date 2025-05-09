@@ -8,13 +8,14 @@
     --color-gray-deep: #0A0A0F;
     --color-gray: #808080;
     --color-accent: #079211;
+    --color-red: #FF5500;
 
     --container-width: 1280px;
     --container-desktop-padding-x: 125px;
     --container-tablet-padding-x: 80px;
     --container-mobile-padding-x: 55px;
 
-    --section-padding-y: 70px;
+    --section-padding-y: 120px;
     --section-tablet-padding-y: 50px;
     --section-header-margin-y: 90px;
     --section-tablet-header-margin-y: 70px;
@@ -25,7 +26,7 @@
     --border: 1px solid var(--color-accent);
 
     --transition-duration: .2s;
-    --transition-duration-img: 1s;
+    --transition-duration-img: .3s;
 
     --transition-promo: 1.5s cubic-bezier(.05, .5, 0, 1);
 }
