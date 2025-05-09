@@ -34,13 +34,16 @@
         &:user-invalid {
             border-color: var(--color-red);
         }
+
+        &:-webkit-autofill {
+            -webkit-text-fill-color: var(--color-light);
+            box-shadow: 0 0 0 1000px var(--color-dark-light) inset;
+        }
     }
 
     &__required-star {
         color: var(--color-red);
     }
-
-
 
     textarea.field__control {
         resize: vertical;

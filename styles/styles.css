@@ -208,6 +208,7 @@ svg * {
   --button-height: 38px;
   --button-height-large: 54px;
   --border: 1px solid var(--color-accent);
+  --border-radius: 10px;
   --transition-duration: .2s;
   --transition-duration-img: .3s;
   --transition-promo: 1.5s cubic-bezier(.05, .5, 0, 1);
@@ -480,6 +481,10 @@ dialog::backdrop {
 }
 .field__control:user-invalid {
   border-color: var(--color-red);
+}
+.field__control:-webkit-autofill {
+  -webkit-text-fill-color: var(--color-light);
+  box-shadow: 0 0 0 1000px var(--color-dark-light) inset;
 }
 .field__required-star {
   color: var(--color-red);
@@ -914,6 +919,81 @@ dialog::backdrop {
   background: var(--color-accent);
 }
 
+.skills {
+  display: grid;
+  align-items: start;
+  gap: 40px;
+}
+@media (min-width: 1024px) {
+  .skills {
+    grid-template-columns: repeat(2, 50%);
+  }
+}
+@media (max-width: 1023px) {
+  .skills {
+    gap: 25px;
+  }
+}
+.skills__item-data {
+  display: grid;
+  gap: 20px;
+}
+.skills__item-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.skills__item-name {
+  position: relative;
+  padding: 15px;
+  color: var(--color-light);
+  background-color: var(--color-dark-light);
+  border-radius: var(--border-radius);
+  transition-duration: var(--transition-duration);
+}
+.skills__item-name:hover:has(.skills__item-tooltip) {
+  background-color: var(--color-dark-deep);
+}
+.skills__item-name:hover .skills__item-tooltip, .skills__item-name:active .skills__item-tooltip {
+  opacity: 1;
+  visibility: visible;
+  scale: 1;
+}
+.skills__item-tooltip {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  top: calc(100% + 12px);
+  left: 0;
+  padding: 15px;
+  border: 1px solid var(--color-accent);
+  border-radius: var(--border-radius);
+  background-color: var(--color-dark-deep);
+  transition-duration: var(--transition-duration);
+  z-index: 999;
+  scale: 0.75;
+}
+@media (min-width: 768px) {
+  .skills__item-tooltip {
+    min-width: 300px;
+  }
+}
+.skills__item-tooltip span {
+  font-weight: 600;
+}
+.skills__item-tooltip::before {
+  width: 20px;
+  height: 20px;
+  content: "";
+  position: absolute;
+  top: 0;
+  border: inherit;
+  background-color: var(--color-dark-deep);
+  rotate: 225deg;
+  clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+  translate: 0 -50%;
+}
+
 .experience__list {
   display: flex;
   flex-wrap: wrap;
@@ -964,6 +1044,7 @@ dialog::backdrop {
 @media (max-width: 1023px) {
   .tabs__buttons {
     width: max-content;
+    margin-inline: auto;
   }
 }
 .tabs__buttons--compact {
@@ -1042,6 +1123,19 @@ dialog::backdrop {
 .project-card__subtitle {
   font-weight: 600;
   line-height: 1.5;
+}
+.project-card__subtitle a {
+  color: var(--color-gray);
+}
+@media (hover: hover) {
+  .project-card__subtitle a:hover {
+    color: var(--color-accent);
+  }
+}
+@media (hover: none) {
+  .project-card__subtitle a:active {
+    color: var(--color-accent);
+  }
 }
 .project-card__links {
   display: flex;
