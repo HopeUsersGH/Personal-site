@@ -1,0 +1,9 @@
+@use '../../helpers' as *;
+
+.modal {
+  display: none;
+
+  &.is-active {
+    display: block;
+  }
+}

@@ -6,6 +6,7 @@
     align-items: start;
     row-gap: 16px;
     font-weight: 500;
+    position: relative;
 
     &__label {
         @include fluid-text(16, 14);
@@ -42,6 +43,10 @@
     }
 
     &__required-star {
+        color: var(--color-red);
+    }
+
+    &__error {
         color: var(--color-red);
     }
 

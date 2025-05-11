@@ -451,6 +451,7 @@ dialog::backdrop {
   align-items: start;
   row-gap: 16px;
   font-weight: 500;
+  position: relative;
 }
 .field__label {
   font-size: clamp(16px, 0.9722222222vw, 14px);
@@ -487,6 +488,9 @@ dialog::backdrop {
   box-shadow: 0 0 0 1000px var(--color-dark-light) inset;
 }
 .field__required-star {
+  color: var(--color-red);
+}
+.field__error {
   color: var(--color-red);
 }
 .field textarea.field__control {
@@ -568,6 +572,9 @@ dialog::backdrop {
   position: absolute;
   top: 18px;
   right: 10px;
+}
+.header__vertical-menu-list {
+  display: flex;
 }
 .header__vertical-menu-link {
   display: block;
@@ -978,6 +985,9 @@ dialog::backdrop {
     min-width: 300px;
   }
 }
+.skills__item-tooltip p {
+  line-height: 1.5;
+}
 .skills__item-tooltip span {
   font-weight: 600;
 }
@@ -1124,9 +1134,6 @@ dialog::backdrop {
   font-weight: 600;
   line-height: 1.5;
 }
-.project-card__subtitle a {
-  color: var(--color-gray);
-}
 @media (hover: hover) {
   .project-card__subtitle a:hover {
     color: var(--color-accent);
@@ -1189,6 +1196,79 @@ dialog::backdrop {
   .contact__info {
     margin-bottom: var(--marginBetween);
   }
+}
+
+.checkbox {
+  display: inline-flex;
+  align-items: center;
+  column-gap: 10px;
+  position: relative;
+}
+@media (max-width: 767px) {
+  .checkbox {
+    column-gap: 6px;
+  }
+}
+@media (hover: hover) {
+  .checkbox:hover .checkbox__control {
+    border-color: var(--color-accent);
+  }
+}
+@media (hover: none) {
+  .checkbox:active .checkbox__control {
+    border-color: var(--color-accent);
+  }
+}
+.checkbox__label a {
+  color: var(--color-light);
+}
+@media (hover: hover) {
+  .checkbox__label a:hover {
+    color: var(--color-accent);
+  }
+}
+@media (hover: none) {
+  .checkbox__label a:active {
+    color: var(--color-accent);
+  }
+}
+.checkbox__control {
+  --size: 28px;
+  width: var(--size);
+  height: var(--size);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  appearance: none;
+  margin: 0;
+  background-color: var(--color-gray-deep);
+  border: 1px solid var(--color-dark-light);
+  border-radius: 4px;
+  cursor: pointer;
+}
+@media (max-width: 767px) {
+  .checkbox__control {
+    --size: 28px;
+  }
+}
+.checkbox__control:not(:checked)::after {
+  opacity: 0;
+  visibility: hidden;
+}
+.checkbox__control:user-invalid {
+  border-color: var(--color-red);
+}
+.checkbox__control::after {
+  content: "✔";
+  color: var(--color-light);
+  transition-duration: var(--transition-duration);
+}
+
+.modal {
+  display: none;
+}
+.modal.is-active {
+  display: block;
 }
 
 .footer {

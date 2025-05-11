@@ -32,8 +32,6 @@
     line-height: 1.5;
 
     & a {
-      color: var(--color-gray);
-
       @include hover {
         color: var(--color-accent);
       }
