@@ -1,0 +1,10 @@
+@use '../../helpers' as *;
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  display: none;
+  background-color: var(--color-dark-transparent);
+  transition-duration: var(--transition-duration);
+  z-index: 1000;
+}

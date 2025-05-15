@@ -25,5 +25,7 @@
 @use 'blocks/sections/project-card';
 @use 'blocks/sections/contact';
 @use 'blocks/sections/checkbox';
-@use 'blocks/sections/modal';
 @use 'blocks/footer/footer';
+@use 'blocks/modals/overlay';
+@use 'blocks/modals/modal';
+@use 'blocks/modals/privacy';

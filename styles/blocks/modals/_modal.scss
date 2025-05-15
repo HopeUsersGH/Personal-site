@@ -1,0 +1,55 @@
+@use '../../helpers' as *;
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  row-gap: 10px;
+  color: var(--color-light);
+  background: var(--color-gray-deep);
+  padding: 32px;
+  border: 1px solid var(--color-accent);
+  border-radius: var(--border-radius);
+  z-index: 1000;
+
+  &.is-active {
+    display: grid;
+  }
+
+  &__close {
+    @include square(48px);
+
+    position: absolute;
+    top: 0;
+    left: 100%;
+    color: var(--color-light);
+    cursor: pointer;
+    transition-duration: var(--transition-duration);
+
+    @include hover {
+      color: var(--color-accent);
+    }
+
+    &::before,
+    &::after {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      translate: -50% -50%;
+      content: "";
+      width: 65%;
+      height: 3px;
+      background-color: currentColor;
+    }
+
+    &::before {
+      transform: rotate(-45deg);
+    }
+
+    &::after {
+      transform: rotate(45deg);
+    }
+  }
+}

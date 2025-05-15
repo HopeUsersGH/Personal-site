@@ -48,6 +48,10 @@
 
     &__error {
         color: var(--color-red);
+
+        &:not(:last-child) {
+            display: block;
+        }
     }
 
     textarea.field__control {

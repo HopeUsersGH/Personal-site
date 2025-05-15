@@ -14,6 +14,7 @@
         height: 1px;
         background: var(--color-gray);
         margin: 40px auto;
+        max-width: var(--container-width);
     }
 
     &__extra {

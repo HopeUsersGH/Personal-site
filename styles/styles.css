@@ -191,6 +191,7 @@ svg * {
 :root {
   --color-dark-deep: #050507;
   --color-dark: #101017;
+  --color-dark-transparent: #101017b0;
   --color-dark-light: #313131;
   --color-light: #FFFFFF;
   --color-gray-deep: #0A0A0F;
@@ -253,6 +254,10 @@ svg * {
   .visible-mobile {
     display: none !important;
   }
+}
+
+html.is-lock {
+  overflow: hidden;
 }
 
 body {
@@ -493,6 +498,9 @@ dialog::backdrop {
 .field__error {
   color: var(--color-red);
 }
+.field__error:not(:last-child) {
+  display: block;
+}
 .field textarea.field__control {
   resize: vertical;
   min-height: 120px;
@@ -648,7 +656,6 @@ dialog::backdrop {
     row-gap: 20px;
   }
 }
-
 .soc1als__item:not(:last-child) {
   margin-bottom: 20px;
 }
@@ -1221,6 +1228,7 @@ dialog::backdrop {
 }
 .checkbox__label a {
   color: var(--color-light);
+  cursor: pointer;
 }
 @media (hover: hover) {
   .checkbox__label a:hover {
@@ -1241,6 +1249,7 @@ dialog::backdrop {
   align-items: center;
   appearance: none;
   margin: 0;
+  padding-inline: 13px;
   background-color: var(--color-gray-deep);
   border: 1px solid var(--color-dark-light);
   border-radius: 4px;
@@ -1264,11 +1273,10 @@ dialog::backdrop {
   transition-duration: var(--transition-duration);
 }
 
-.modal {
-  display: none;
-}
-.modal.is-active {
-  display: block;
+#checkbox-errors {
+  position: absolute;
+  top: calc(100% + 16px);
+  left: 0;
 }
 
 .footer {
@@ -1283,6 +1291,7 @@ dialog::backdrop {
   height: 1px;
   background: var(--color-gray);
   margin: 40px auto;
+  max-width: var(--container-width);
 }
 .footer__extra {
   --marginInner: 30px;
@@ -1292,6 +1301,108 @@ dialog::backdrop {
 }
 .footer__extra span {
   color: var(--color-accent);
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  display: none;
+  background-color: var(--color-dark-transparent);
+  transition-duration: var(--transition-duration);
+  z-index: 1000;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  row-gap: 10px;
+  color: var(--color-light);
+  background: var(--color-gray-deep);
+  padding: 32px;
+  border: 1px solid var(--color-accent);
+  border-radius: var(--border-radius);
+  z-index: 1000;
+}
+.modal.is-active {
+  display: grid;
+}
+.modal__close {
+  width: 48px;
+  height: 48px;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  color: var(--color-light);
+  cursor: pointer;
+  transition-duration: var(--transition-duration);
+}
+@media (hover: hover) {
+  .modal__close:hover {
+    color: var(--color-accent);
+  }
+}
+@media (hover: none) {
+  .modal__close:active {
+    color: var(--color-accent);
+  }
+}
+.modal__close::before, .modal__close::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  content: "";
+  width: 65%;
+  height: 3px;
+  background-color: currentColor;
+}
+.modal__close::before {
+  transform: rotate(-45deg);
+}
+.modal__close::after {
+  transform: rotate(45deg);
+}
+
+.privacy {
+  --marginBottomBetweenItems: 32px;
+  height: 65vh;
+  text-align: justify;
+}
+.privacy__inner {
+  padding-inline: 25px;
+  overflow: auto;
+}
+.privacy__title {
+  margin-bottom: calc(var(--marginBottomBetweenItems) / 2);
+  font-size: 18px;
+}
+.privacy__chapter-title, .privacy__title, .privacy__content span {
+  font-weight: 700;
+}
+.privacy__chapter {
+  margin-bottom: var(--marginBottomBetweenItems);
+}
+.privacy__chapter-title:not(:last-child), .privacy__chapter-description:not(:last-child) {
+  margin-bottom: calc(var(--marginBottomBetweenItems) / 2);
+}
+.privacy__chapter-list {
+  padding-left: var(--marginBottomBetweenItems);
+}
+.privacy__chapter-item:not(:last-child) {
+  margin-bottom: calc(var(--marginBottomBetweenItems) / 3);
+}
+.privacy ul:not([class]) {
+  padding: 0;
+}
+.privacy ul {
+  margin-top: 4px;
+  list-style-type: none;
+}
+.privacy li {
+  margin-bottom: 4px;
 }
 
 /*# sourceMappingURL=styles.css.map */

@@ -6,6 +6,7 @@ import VerticalMenuCollection from "./ChangeColorMenu/VerticalMenu.js"
 import TabsCollection from "./Tabs.js"
 import FormsValidation from "./FormsValidation.js"
 import ContactFormFeedbackCollection from "./ContactFormFeedback.js"
+import PrivacyPolicy from "./PrivacyPolicy.js"
 
 new ProgressBar()
 new TypedAnimateText()
@@ -15,3 +16,4 @@ new VerticalMenuCollection()
 new TabsCollection()
 new FormsValidation()
 new ContactFormFeedbackCollection()
+new PrivacyPolicy()

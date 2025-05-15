@@ -1,21 +1,21 @@
+import FormsValidation from "./FormsValidation.js"
+import Modal from "./Modal.js"
+
 const rootSelector = '[data-js-contact-form]'
 
-//код в комментариях в будущем послужит для модального окна
-class ContactFormFeedback {
+class ContactFormFeedback{
     selectors = {
         root: rootSelector,
         contactFormFeedback: '[data-js-contact-form-feedback]',
         modalThanks: '[data-js-modal-thanks]',
+        modalFail: '[data-js-modal-fail]',
     }
-
-    /*stateClasses = {
-        isActive: 'is-active',
-    }*/
 
     constructor(rootElement) {
         this.rootElement = rootElement
         this.contactFormFeedbackElements = this.rootElement.querySelector(this.selectors.contactFormFeedback)
-        //this.modalThanksElements = this.rootElement.querySelector(this.selectors.modalThanks)
+        this.modalThanksElement = document.querySelector(this.selectors.modalThanks)
+        this.modalFailElement = document.querySelector(this.selectors.modalFail)
         this.bindEvents()
 }
 
@@ -29,23 +29,44 @@ class ContactFormFeedback {
         })
             .then((response) => response.json())
             .then((data) => {
-                console.error("Успешно:", data);
-                alert("Успешно отправились данные");
-                //this.modalThanksElements.classList.add(this.stateClasses.isActive)
+                const modalThanks = new Modal(this.modalThanksElement)
+                modalThanks.onShowModal()
+                this.contactFormFeedbackElements.reset();
             })
             .catch((error) => {
-                console.error("Ошибка:", error);
-                alert("Произошла ошибка. Пожалуйста, попробуйте еще раз.");
+                console.log('Feedback Failed', error)
+                const modalFail = new Modal(this.modalFailElement)
+                modalFail.onShowModal()
             });
     }
 
+    onCheckValidated(e) {
+        const formsValidation = new FormsValidation()
+
+        const requiredControlElements = [...e.target.elements].filter(({ required }) => required)
+
+        let isFormValid = true
+
+        requiredControlElements.forEach((element) => {
+            const isFieldValid = formsValidation.validateField(element)
+            if (!isFieldValid) {
+                isFormValid = false
+            }
+        })
+
+        return isFormValid
+    }
+
     onSubmitFeedback = (e) => {
-        this.feedbackFormData = new FormData(e.target);
+        e.preventDefault()
 
-        this.feedback = Object.fromEntries(this.feedbackFormData);
-        console.log('feedback', this.feedback);
-
-        this.sendFeedback(this.feedback);
+        if (this.onCheckValidated(e)) {
+            this.feedbackFormData = new FormData(e.target)
+            this.feedback = Object.fromEntries(this.feedbackFormData)
+            this.sendFeedback(this.feedback)
+        } else {
+            console.log('Форма не валидна')
+        }
     }
 
     bindEvents() {

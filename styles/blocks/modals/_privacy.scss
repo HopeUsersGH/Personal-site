@@ -1,0 +1,55 @@
+@use '../../helpers' as *;
+
+.privacy {
+  --marginBottomBetweenItems: 32px;
+
+  height: 65vh;
+  text-align: justify;
+
+  &__inner {
+    padding-inline: 25px;
+    overflow: auto;
+  }
+
+  &__title {
+    margin-bottom: calc(var(--marginBottomBetweenItems) / 2);
+    font-size: 18px;
+  }
+
+  &__chapter-title,
+  &__title,
+  &__content span {
+    font-weight: 700;
+  }
+
+  &__chapter {
+
+    margin-bottom: var(--marginBottomBetweenItems);
+
+    &-title:not(:last-child),
+    &-description:not(:last-child) {
+      margin-bottom: calc(var(--marginBottomBetweenItems) / 2);
+    }
+
+    &-list  {
+      padding-left: var(--marginBottomBetweenItems);
+    }
+
+    &-item:not(:last-child) {
+      margin-bottom: calc(var(--marginBottomBetweenItems) / 3);
+    }
+  }
+
+  & ul:not([class]) {
+    padding: 0;
+  }
+
+  & ul {
+    margin-top: 4px;
+    list-style-type: none;
+  }
+
+  & li {
+    margin-bottom: 4px;
+  }
+}
