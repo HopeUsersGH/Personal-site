@@ -46,45 +46,5 @@
         scale: 1;
       }
     }
-
-    &-tooltip {
-      @include hide;
-
-      position: absolute;
-      top: calc(100% + 12px);
-      left: 0;
-      padding: 15px;
-      border: 1px solid var(--color-accent);
-      border-radius: var(--border-radius);
-      background-color: var(--color-dark-deep);
-      transition-duration: var(--transition-duration);
-      z-index: 999;
-      scale: .75;
-
-      @include mobile-above {
-        min-width: 300px;
-      }
-
-      & p {
-        line-height: 1.5;
-      }
-
-      & span {
-        font-weight: 600;
-      }
-
-      &::before {
-        @include square(20px);
-
-        content: "";
-        position: absolute;
-        top: 0;
-        border: inherit;
-        background-color: var(--color-dark-deep);
-        rotate: 225deg;
-        clip-path: polygon(100% 0,0% 100%, 100% 100%);
-        translate: 0 -50%;
-      }
-    }
   }
 }

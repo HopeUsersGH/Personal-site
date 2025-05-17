@@ -7,6 +7,7 @@ import TabsCollection from "./Tabs.js"
 import FormsValidation from "./FormsValidation.js"
 import ContactFormFeedbackCollection from "./ContactFormFeedback.js"
 import PrivacyPolicy from "./PrivacyPolicy.js"
+import FixTooltipPosition from "./FixTooltipPosition.js"
 
 new ProgressBar()
 new TypedAnimateText()
@@ -17,3 +18,4 @@ new TabsCollection()
 new FormsValidation()
 new ContactFormFeedbackCollection()
 new PrivacyPolicy()
+new FixTooltipPosition()

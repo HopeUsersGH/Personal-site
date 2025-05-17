@@ -1,14 +1,37 @@
 @use '../../helpers' as *;
 
 .experience-card {
-
     &__body {
         display: flex;
         flex-direction: column;
         row-gap: 46px;
-    
+
         @include mobile {
             row-gap: 30px;
+        }
+
+        & svg {
+            @include square(50px);
+
+            color: var(--color-light);
+            fill: currentColor;
+        }
+    }
+
+    &__icon {
+        width: fit-content;
+        position: relative;
+
+        &::after {
+            @include square(30px);
+
+            content: '';
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            border-radius: 50%;
+            background-color: var(--color-accent);
+            z-index: -1;
         }
     }
 

@@ -1,0 +1,141 @@
+@use '../../helpers' as *;
+
+.resume {
+  --widthLineAccent: 2px;
+
+  display: grid;
+  justify-content: space-evenly;
+  column-gap: 30px;
+
+  @include desktop-above {
+    grid-template-columns: repeat(2, 425px);
+  }
+
+  @include tablet-above {
+    grid-template-columns: repeat(2, 1fr);
+
+    .tabs__content:not(.is-active) {
+      display: block;
+    }
+  }
+  &__column {
+    position: relative;
+  }
+
+  &__title {
+    padding-left: 30px;
+
+    &::after {
+      @include square(15px);
+
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translate(calc(-50% + var(--widthLineAccent) / 2), -50%);
+      border-radius: 50%;
+      background-color: var(--color-accent);
+    }
+  }
+
+  &__list {
+    display: grid;
+    row-gap: 30px;
+    padding: 30px 0 0 30px;
+  }
+
+  &__title,
+  &__list {
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: var(--widthLineAccent);
+      height: 100%;
+      background-color: var(--color-accent);
+    }
+  }
+
+  &__item {
+    position: relative;
+  }
+
+  &__card {
+    display: grid;
+    row-gap: 15px;
+
+    &-inner {
+      display: flex;
+      align-items: center;
+      column-gap: 15px;
+    }
+
+    &-icon {
+      @include flex-center;
+
+      position: relative;
+
+      &::after {
+        @include square(38px);
+
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        background-color: var(--color-accent);
+        z-index: -1;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: var(--widthLineAccent);
+        top: 50%;
+        right: 100%;
+        transform: translateY(-50%);
+        background-color: var(--color-accent);
+        z-index: -1;
+      }
+
+      & svg {
+        color: var(--color-light);
+      }
+    }
+
+    &-titles {
+      display: grid;
+      row-gap: 5px;
+    }
+
+    &-body {
+      display: grid;
+      row-gap: 10px;
+    }
+
+    &-info {
+      color:  var(--color-light);
+
+      & p {
+        position: relative;
+        padding-left: 25px;
+
+        &::after {
+          @include square(10px);
+
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: 0;
+          transform: translateY(-50%);
+          background-color: currentColor;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+}

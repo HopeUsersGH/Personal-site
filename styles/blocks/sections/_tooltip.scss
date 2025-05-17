@@ -1,0 +1,65 @@
+@use '../../helpers' as *;
+
+.tooltip {
+  @include hide;
+
+  position: absolute;
+  top: calc(100% + 12px);
+  padding: 15px;
+  border: 1px solid var(--color-accent);
+  border-radius: var(--border-radius);
+  background-color: var(--color-dark-deep);
+  transition-duration: var(--transition-duration);
+  min-width: 300px;
+  z-index: 999;
+  scale: .75;
+
+  @include mobile {
+    min-width: 150px;
+  }
+
+  &.is-on-the-left-side {
+    left: -10px;
+    transform-origin: 0 0;
+
+    &::before {
+      right: auto;
+    }
+  }
+
+  &.is-on-the-right-side {
+    right: -10px;
+    left: auto;
+    transform-origin: 100% 0;
+
+    &::before {
+      right: 14px;
+    }
+  }
+
+  & p {
+    line-height: 1.5;
+
+    @include mobile {
+      hyphens: auto;
+      overflow-wrap: break-word;
+    }
+  }
+
+  & span {
+    font-weight: 600;
+  }
+
+  &::before {
+    @include square(20px);
+
+    content: "";
+    position: absolute;
+    top: 0;
+    border: inherit;
+    background-color: var(--color-dark-deep);
+    rotate: 225deg;
+    clip-path: polygon(100% 0,0% 100%, 100% 100%);
+    translate: 0 -50%;
+  }
+}

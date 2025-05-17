@@ -1,0 +1,17 @@
+@use '../../helpers' as *;
+
+.pin-active {
+  @include flex-center;
+
+  position: absolute;
+  right: 0;
+  bottom: 100%;
+  color: var(--color-light);
+
+  &:hover .resume__item-tooltip,
+  &:active .resume__item-tooltip {
+    @include show;
+
+    scale: 1;
+  }
+}

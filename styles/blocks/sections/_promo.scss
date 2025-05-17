@@ -36,6 +36,11 @@
     justify-content: center;
     min-height: 100px;
 
+    & p {
+      color: var(--color-light);
+      font-weight: 700;
+    }
+
     & .typed-cursor {
       @include fluid-text(40, 46);
 
