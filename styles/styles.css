@@ -1521,6 +1521,11 @@ dialog::backdrop {
   border-radius: var(--border-radius);
   z-index: 1000;
 }
+@media (max-width: 1023px) {
+  .modal {
+    padding: 10px;
+  }
+}
 .modal.is-active {
   display: grid;
 }
@@ -1566,9 +1571,19 @@ dialog::backdrop {
   height: 65vh;
   text-align: justify;
 }
+@media (max-width: 1023px) {
+  .privacy {
+    width: 70%;
+  }
+}
 .privacy__inner {
   padding-inline: 25px;
   overflow: auto;
+}
+@media (max-width: 1023px) {
+  .privacy__inner {
+    padding-inline: 10px;
+  }
 }
 .privacy__title {
   margin-bottom: calc(var(--marginBottomBetweenItems) / 2);

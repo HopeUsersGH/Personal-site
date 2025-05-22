@@ -6,9 +6,17 @@
   height: 65vh;
   text-align: justify;
 
+  @include tablet {
+    width: 70%;
+  }
+
   &__inner {
     padding-inline: 25px;
     overflow: auto;
+
+    @include tablet {
+      padding-inline: 10px;
+    }
   }
 
   &__title {
