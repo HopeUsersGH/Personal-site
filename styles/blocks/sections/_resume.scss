@@ -18,6 +18,7 @@
       display: block;
     }
   }
+
   &__column {
     position: relative;
   }
@@ -110,6 +111,20 @@
     &-titles {
       display: grid;
       row-gap: 5px;
+    }
+
+    &-title a {
+      display: inline-flex;
+      align-items: center;
+      column-gap: 4px;
+
+      @include hover {
+        color: var(--color-accent);
+      }
+
+      & svg {
+        @include square(16px);
+      }
     }
 
     &-body {

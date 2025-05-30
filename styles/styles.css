@@ -1211,6 +1211,25 @@ dialog::backdrop {
   display: grid;
   row-gap: 5px;
 }
+.resume__card-title a {
+  display: inline-flex;
+  align-items: center;
+  column-gap: 4px;
+}
+@media (hover: hover) {
+  .resume__card-title a:hover {
+    color: var(--color-accent);
+  }
+}
+@media (hover: none) {
+  .resume__card-title a:active {
+    color: var(--color-accent);
+  }
+}
+.resume__card-title a svg {
+  width: 16px;
+  height: 16px;
+}
 .resume__card-body {
   display: grid;
   row-gap: 10px;
